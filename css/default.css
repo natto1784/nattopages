@@ -1,3 +1,14 @@
+@font-face {
+  font-family: 'Monoid Bold';
+  src: url('https://larsenwork.com/monoid/css/Monoid-Bold.eot');
+  src: url('https://larsenwork.com/monoid/css/Monoid-Bold.eot?#iefix') format('embedded-opentype'), 
+  url('https://larsenwork.com/monoid/css/Monoid-Bold.woff2') format('woff2'),
+  url('https://larsenwork.com/monoid/css/Monoid-Bold.woff') format('woff'),
+  url('https://larsenwork.com/monoid/css/Monoid-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -47,6 +58,7 @@ article .header {
 
 .logo a {
   font-weight: bold;
+  font-family: "Monoid Bold";
   color: #000;
   text-decoration: none;
 }
@@ -111,7 +123,7 @@ article .header {
 
 @media (min-width: 640px) {
   body {
-    width: 60rem;
+    width: 60%;
     margin: 0 auto;
     padding: 0;
   }

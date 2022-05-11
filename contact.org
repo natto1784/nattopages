@@ -1,0 +1,11 @@
+---
+title: Contact
+---
+
+- Email     :: [[mailto:natto@weirdnatto.in][natto@weirdnatto.in]]
+               [[mailto:singh.amneesh1784@gmail.com][singh.amneesh1784@gmail.com]]
+               [[mailto:natto1784@protonmail.com][natto1784@protonmail.com]]
+- IRC Nicks ::  natto
+               natto17
+- LinkedIn  ::  [[https://www.linkedin.com/in/natto1784/][natto1784]]
+- Discord   ::  AlpaViraam#0735

@@ -1,0 +1,4 @@
+*.md linguist-detectable=true
+*.markdown linguist-detectable=true
+*.org linguist-detectable=true
+README* linguist-detectable=false

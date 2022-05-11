@@ -1,7 +1,7 @@
 name:               nattopages
 version:            0.1.0.0
 build-type:         Simple
-license:            MPL-2.0
+license:            MIT
 cabal-version:      >= 1.10
 
 executable site

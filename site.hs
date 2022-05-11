@@ -15,7 +15,7 @@ main = hakyllWith config $ do
     route idRoute
     compile compressCssCompiler
 
-  match (fromList ["about.rst", "contact.markdown"]) $ do
+  match (fromList ["about.org", "contact.org"]) $ do
     route $ setExtension "html"
     compile $
       pandocCompiler
@@ -64,7 +64,7 @@ config =
   defaultConfiguration
     { deployCommand =
         "rsync --checksum -ave 'ssh -p 22001' \
-        \_site/* \
+        \result/* \
         \root@weirdnatto.in:/var/lib/site/",
       previewPort = 3333
     }

@@ -1,0 +1,6 @@
+* nattopages
+Pages by natto
+
+* License
+Software code uses the MIT license.
+All the content under posts/ and images/personal uses the CC BY-NC-SA 4.0 license.
