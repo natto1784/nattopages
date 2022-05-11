@@ -1,0 +1,11 @@
+result
+\#*\#
+.\#*
+.*~*~
+*~
+result-bin
+dist
+dist-newstyle
+_site
+_cache
+.cache
