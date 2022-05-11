@@ -19,7 +19,7 @@ main = hakyllWith config $ do
     route $ setExtension "html"
     compile $
       pandocCompiler
-        >>= loadAndApplyTemplate "templates/default.html" defaultContext
+        >>= loadAndApplyTemplate "templates/default.html" defaultCtx
         >>= relativizeUrls
 
   match "posts/*org" $ do
@@ -36,8 +36,8 @@ main = hakyllWith config $ do
       posts <- recentFirst =<< loadAll "posts/*"
       let archiveCtx =
             listField "posts" postCtx (return posts)
-              `mappend` constField "title" "Archives"
-              `mappend` defaultContext
+              <> constField "title" "Archives"
+              <> defaultCtx
 
       makeItem ""
         >>= loadAndApplyTemplate "templates/archive.html" archiveCtx
@@ -50,7 +50,7 @@ main = hakyllWith config $ do
       posts <- recentFirst =<< loadAll "posts/*"
       let indexCtx =
             listField "posts" postCtx (return posts)
-              `mappend` defaultContext
+              <> defaultCtx
 
       getResourceBody
         >>= applyAsTemplate indexCtx
@@ -64,7 +64,7 @@ config =
   defaultConfiguration
     { deployCommand =
         "rsync --checksum -ave 'ssh -p 22001' \
-        \result/* \
+        \_site/* \
         \root@weirdnatto.in:/var/lib/site/",
       previewPort = 3333
     }
@@ -72,4 +72,24 @@ config =
 postCtx :: Context String
 postCtx =
   dateField "date" "%B %e, %Y"
-    `mappend` defaultContext
+    <> defaultCtx
+
+defaultCtx :: Context String
+defaultCtx =
+  listField "subdomains" subCtx (return subdomains)
+    <> domainCtx
+    <> defaultContext
+  where
+    domain :: String
+    domain = "weirdnatto.in"
+    subCtx :: Context String
+    subCtx =
+      field "name" (return . itemBody)
+        <> domainCtx
+    domainCtx :: Context String
+    domainCtx = constField "domain" domain
+    subdomains :: [Item String]
+    subdomains = map mkItem ["git", "nomad", "consul", "vault", "ci", "radio"]
+      where
+        mkItem :: a -> Item a
+        mkItem a = Item {itemIdentifier = "subdomain", itemBody = a}

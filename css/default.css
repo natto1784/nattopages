@@ -63,6 +63,19 @@ article .header {
   text-decoration: none;
 }
 
+.subdomains {
+  list-style-type: none;
+}
+
+.subdomains li {
+  display: inline-block;
+}
+
+.subdomains img {
+  width: 30px;
+  height: 30px;
+}
+
 @media (max-width: 319px) {
   body {
     width: 90%;
