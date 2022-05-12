@@ -1,7 +1,6 @@
 --------------------------------------------------------------------------------
 {-# LANGUAGE OverloadedStrings #-}
 
-import Data.Monoid (mappend)
 import Hakyll
 
 --------------------------------------------------------------------------------
@@ -22,12 +21,44 @@ main = hakyllWith config $ do
         >>= loadAndApplyTemplate "templates/default.html" defaultCtx
         >>= relativizeUrls
 
+  tags <- buildTags "posts/*" (fromCapture "archive/tags/*.html")
+
+  tagsRules tags $ \tag pattern -> do
+    let title = "Posts tagged \"" ++ tag ++ "\""
+    route idRoute
+    compile $ do
+      posts <- recentFirst =<< loadAll pattern
+      let tagCtx =
+            constField "title" title
+              <> constField "tag" tag
+              <> listField "posts" (postCtx tags) (return posts)
+              <> defaultCtx
+
+      makeItem ""
+        >>= loadAndApplyTemplate "templates/tag.html" tagCtx
+        >>= loadAndApplyTemplate "templates/default.html" tagCtx
+        >>= relativizeUrls
+
+  create ["archive/tags.html"] $ do
+    route idRoute
+    compile $ do
+      let tagListCtx =
+            field "tags" (\_ -> renderTagList tags)
+              <> constField "title" "Tag List"
+              <> defaultCtx
+
+      makeItem ""
+        >>= loadAndApplyTemplate "templates/tags.html" tagListCtx
+        >>= loadAndApplyTemplate "templates/default.html" tagListCtx
+        >>= relativizeUrls
+
   match "posts/*org" $ do
     route $ setExtension "html"
     compile $
       pandocCompiler
-        >>= loadAndApplyTemplate "templates/post.html" postCtx
-        >>= loadAndApplyTemplate "templates/default.html" postCtx
+        >>= saveSnapshot "content"
+        >>= loadAndApplyTemplate "templates/post.html" (postCtx tags)
+        >>= loadAndApplyTemplate "templates/default.html" (postCtx tags)
         >>= relativizeUrls
 
   create ["archive.html"] $ do
@@ -35,7 +66,7 @@ main = hakyllWith config $ do
     compile $ do
       posts <- recentFirst =<< loadAll "posts/*"
       let archiveCtx =
-            listField "posts" postCtx (return posts)
+            listField "posts" (postCtx tags) (return posts)
               <> constField "title" "Archives"
               <> defaultCtx
 
@@ -49,7 +80,7 @@ main = hakyllWith config $ do
     compile $ do
       posts <- recentFirst =<< loadAll "posts/*"
       let indexCtx =
-            listField "posts" postCtx (return posts)
+            listField "posts" (postCtx tags) (return posts)
               <> defaultCtx
 
       getResourceBody
@@ -69,9 +100,10 @@ config =
       previewPort = 3333
     }
 
-postCtx :: Context String
-postCtx =
-  dateField "date" "%B %e, %Y"
+postCtx :: Tags -> Context String
+postCtx tags =
+  tagsField "tags" tags
+    <> dateField "date" "%B %e, %Y"
     <> defaultCtx
 
 defaultCtx :: Context String
