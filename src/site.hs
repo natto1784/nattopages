@@ -7,6 +7,7 @@ import qualified Data.Text as T
 import Hakyll
 import Text.Pandoc (WriterOptions (writerHighlightStyle, writerNumberSections, writerTOCDepth, writerTableOfContents, writerTemplate))
 import Text.Pandoc.Templates (Template, compileTemplate)
+import Data.Maybe (isJust)
 
 --------------------------------------------------------------------------------
 
@@ -47,8 +48,12 @@ main = hakyllWith config $ do
 
   match "posts/*org" $ do
     route $ setExtension "html"
-    compile $
-      pandocCompilerWith defaultHakyllReaderOptions writerOptions
+    compile $ do
+      identifier <- getUnderlying
+      toc <- getMetadataField identifier "enabletoc"
+      numbering <- getMetadataField identifier "enablenumbering"
+      let writerOptions' = maybe defaultHakyllWriterOptions (const $ writerOptions $ isJust numbering) toc
+      pandocCompilerWith defaultHakyllReaderOptions writerOptions'
         >>= saveSnapshot "content"
         >>= loadAndApplyTemplate "templates/post.html" (postCtx tags <> teaserField "teaser" "content")
         >>= loadAndApplyTemplate "templates/default.html" (postCtx tags)
@@ -126,10 +131,10 @@ defaultCtx =
         mkItem :: a -> Item a
         mkItem a = Item {itemIdentifier = "subdomain", itemBody = a}
 
-writerOptions :: WriterOptions
-writerOptions =
+writerOptions :: Bool -> WriterOptions
+writerOptions withNumbering =
   defaultHakyllWriterOptions
-    { writerNumberSections = True,
+    { writerNumberSections = withNumbering,
       writerTableOfContents = True,
       writerTOCDepth = 2,
       writerTemplate = Just tocTemplate

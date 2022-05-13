@@ -1,6 +1,6 @@
 ---
 title: alo
-tags: amaang, shararati
+tags: amaang
 enabletoc: true
 ---
 
