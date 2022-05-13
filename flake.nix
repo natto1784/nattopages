@@ -18,7 +18,7 @@
             LANG = "en_US.UTF-8";
           };
           
-          site = pkgs.haskellPackages.callCabal2nix "nattopages" ./. { };
+          site = pkgs.haskellPackages.callCabal2nix "nattopages" ./src { };
           nattopages = pkgs.stdenv.mkDerivation {
             name = "nattopages";
             src = ./.;
@@ -27,7 +27,7 @@
             buildPhase = (pkgs.lib.concatStringsSep "\n" vars ) + ''
               log=$(site build)
               mkdir -p $out
-              cp -r _site/* $out
+              cp -r \_site/* $out
             '';
           };
         in

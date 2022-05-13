@@ -1,0 +1,23 @@
+<ul>
+    $for(posts)$
+        <li class="post-item post-preview-item" style="list-style-type: none;" >
+            <article>
+                <h1 class="post-title">$title$</h1>
+                <div class="post-header">
+                    <div class="post-date" >
+                        Posted $date$
+                    </div>
+                    <div class="tags" >
+                        $if(tags)$
+                          Tags: $tags$
+                        $endif$
+                    </div>
+                </div>
+                <div class="post-teaser">
+                    $teaser$
+                </div>
+                <a href="$url$">Read more</a>
+            </article>
+        </li>
+    $endfor$
+</ul>

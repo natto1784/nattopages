@@ -9,18 +9,78 @@
   font-style: normal;
 }
 
+@import url("https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/cascadia-code.min.css");
+
+
+:root {
+  --yellow: #b58900;
+  --orange: #cb4b16;
+  --red: #dc322f;
+ 	--magenta: #d33682;
+  --violet: #6c71c4;
+  --blue: #268bd2;
+  --cyan: #2aa198;
+  --green: #859900;
+  --fg0: #93a1a1;
+  --fg1: #839496;
+  --fg2: #657b83;
+  --fg3: #586e75;
+  --fg4: #073642;
+  --fg5: #002b36;
+  --bg0: #fdf6e3 ;
+  --bg1: #eee8d5;
+  --dark: #002b36;
+  --light: #fdf6e3; 
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg0: #073642;
+    --bg1: #002b36;
+    --fg5: #fdf6e3 ;
+    --fg4: #eee8d5;
+    --fg3: #93a1a1;
+    --fg2: #839496;
+    --fg1: #657b83;
+    --fg0: #586e75;
+  } 
+}
+
 html {
   font-size: 62.5%;
+  background-color: var(--bg0);
+  color: var(--fg2);
 }
 
 body {
   font-size: 1.6rem;
-  color: #000;
+  word-wrap: break-word;
+}
+
+h1, h2, h3 {
+ color: var(--fg3);
 }
 
 header {
-  border-bottom: 0.2rem solid #000;
+  border-bottom: 0.2rem solid var(--magenta);
   margin: 4.2rem 0;
+}
+
+main a, footer a {
+  color: var(--blue);
+}
+
+main a:hover, footer a:hover {
+  color: var(--light);
+  background: var(--blue);
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  transition-duration: 0.1s;
 }
 
 nav {
@@ -31,22 +91,22 @@ nav {
 nav a {
   font-size: 1.8rem;
   font-weight: bold;
-  color: black;
-  text-decoration: none;
+  color: var(--cyan);
   text-transform: uppercase;
+  padding: 0.5rem;
 }
 
-
 nav a:hover {
-  color: pink;
+  background: var(--cyan);
+  color: var(--dark);
 }
 
 footer {
   margin-top: 3rem;
   padding: 1.2rem 0;
-  border-top: 0.2rem solid #000;
+  border-top: 0.2rem solid var(--magenta);
   font-size: 1.2rem;
-  color: #555;
+  color: var(--fg0);
 }
 
 h1 {
@@ -57,10 +117,15 @@ h2 {
   font-size: 2rem;
 }
 
-article .header {
+.post-title {
+  text-align: center;
+  color: var(--fg5) !important;
+}
+
+article .post-header {
   font-size: 1.4rem;
   font-style: italic;
-  color: #555;
+  color: var(--fg0);
 }
 
 .logo {
@@ -74,23 +139,41 @@ article .header {
 
 .logo a {
   font-weight: bold;
-  font-family: "Monoid Bold";
+  font-family: "Monoid Bold", sans-serif;
   font-size: 3rem;
-  color: #000;
+  color: var(--green);
   text-decoration: none;
 }
 
-.subdomains {
-  list-style-type: none;
+article > section {
+  overflow: auto;
 }
 
-.subdomains li {
-  display: inline-block;
+.toc {
+  padding: 2rem;
+  float: right;
+  border-radius: 1rem;
+  background: var(--bg1);
 }
 
-.subdomains img {
-  width: 30px;
-  height: 30px;
+.post-teaser > .toc {
+  display: none;
+}
+
+code {
+  font-family: 'Cascadia Code', sans-serif;
+}
+
+code {
+  border-radius: 0.2rem;
+  background: var(--bg1);
+}
+
+pre {
+  padding: 2rem;
+  border-radius: 1rem;
+  background: var(--bg1);
+  overflow: scroll;
 }
 
 @media (max-width: 319px) {
