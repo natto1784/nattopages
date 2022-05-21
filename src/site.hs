@@ -2,18 +2,27 @@
 {-# LANGUAGE OverloadedStrings #-}
 
 import Data.Functor.Identity (runIdentity)
+import Data.Maybe (isJust)
 import Data.Text (Text)
 import qualified Data.Text as T
 import Hakyll
 import Text.Pandoc (WriterOptions (writerHighlightStyle, writerNumberSections, writerTOCDepth, writerTableOfContents, writerTemplate))
 import Text.Pandoc.Templates (Template, compileTemplate)
-import Data.Maybe (isJust)
 
 --------------------------------------------------------------------------------
 
 main :: IO ()
 main = hakyllWith config $ do
-  match "images/*" $ do
+  
+  match "images/logos/*" $ do
+    route idRoute
+    compile copyFileCompiler
+
+  match "fonts/*" $ do
+    route idRoute
+    compile copyFileCompiler
+
+  match "sitemap.xml" $ do
     route idRoute
     compile copyFileCompiler
 
@@ -87,11 +96,27 @@ main = hakyllWith config $ do
         >>= loadAndApplyTemplate "templates/default.html" indexCtx
         >>= relativizeUrls
 
+  create ["rss.xml"] $ do
+    route idRoute
+    compile $ do
+      let feedCtx = postCtx tags <> bodyField "description"
+      posts <- fmap (take 10) . recentFirst =<< loadAllSnapshots "posts/*" "content"
+      renderRss rssFeedConfiguration feedCtx posts
+
   match "images/*" $ do
     route idRoute
     compile copyFileCompiler
 
   match "templates/*" $ compile templateBodyCompiler
+
+rssFeedConfiguration :: FeedConfiguration
+rssFeedConfiguration = FeedConfiguration
+    { feedTitle       = "nattopages"
+    , feedDescription = "Pages by natto"
+    , feedAuthorName  = "Amneesh Singh"
+    , feedAuthorEmail = "natto@weirdnatto.in"
+    , feedRoot        = "https://weirdnatto.in"
+    }
 
 config :: Configuration
 config =
