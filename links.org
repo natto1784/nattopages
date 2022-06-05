@@ -1,0 +1,29 @@
+---
+title: Links
+---
+
+Random links I find useful
+
+** Linux
+- [[https://wiki.archlinux.org][ArchWiki]]: The official ArchLinux wiki.
+- [[https://nixos.wiki/][NixOS Wiki]]: The unofficial user's wiki for Nix/NixOS/Nixpkgs and surrounding infrastructure.
+- [[https://search.nixos.org/][NixOS Search]]: The search page for packages under Nixpkgs (and NixOS options).
+- [[https://www.protondb.com/][protondb]]: Compatibility reports for games run with Proton under Linux.
+
+** Reading and writing
+- [[https://writing.stackexchange.com][Writing StackExchange]]: Q&A for writing.
+- [[https://worldbuilding.stackexchange.com][Worldbuilding StackExchange]]: Q&A regarding worldbuilding.
+- [[https://www.myanonamouse.net][MyAnonamouse]]: A private torrent tracker for books.
+- [[https://punjabilibrary.com/][ਪੰਜਾਬੀ ਲਾਇਬ੍ਰੇਰੀ]]: Punjabi Library, a library for Punjabi books and audiobooks.
+- [[https://syosetu.com/][小説家になろう]]: Shōsetsuka ni Narō, a Japanese novel publishing website.
+
+** History
+- [[https://www.larsdatter.com/index.html][Larsdatter]]: Medieval & Rennaissance Material Culture.
+- [[https://www.medievalchronicles.com][Medieval Chronicles]]: A library about medieval stuff.
+
+** Code Repositories
+- [[https://github.com/NixOS/nixpkgs][Nixpkgs]]: Nix Packages collection.
+- [[https://github.com/concourse/concourse][Concourse CI]]: A continuous thing-doer.
+- [[https://github.com/emacs-lsp/lsp-mode][lsp-mode]]: Emacs library for Language Server Protocol.
+- [[https://gitlab.com/qemu-project/qemu][QEMU]]: The famous virtualization API library.
+- [[https://gitlab.com/libvirt/libvirt/][libvirt]]: The famous virtualization API library.

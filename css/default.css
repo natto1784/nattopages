@@ -181,6 +181,11 @@ article > section {
   display: none;
 }
 
+.center {
+  text-align: center;
+  font-weight: bold;
+}
+
 code {
   font-family: 'Cascadia Code', sans-serif;
 }
@@ -193,8 +198,9 @@ code {
 pre {
   padding: 2rem;
   border-radius: 1rem;
+  border-left: 0.5rem solid var(--cyan);
   background: var(--bg1);
-  overflow: scroll;
+  overflow-x: auto;
 }
 
 .toc {
