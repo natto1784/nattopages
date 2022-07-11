@@ -1,6 +1,5 @@
 ---
 title: Feign Chapter 1 - Shadripu
-toc: false
 tags: creative_writing, feign
 author: AlpaViraam
 ---
