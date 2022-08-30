@@ -20,6 +20,10 @@ Random links I find useful
 ** History
 - [[https://www.larsdatter.com/index.html][Larsdatter]]: Medieval & Rennaissance Material Culture.
 - [[https://www.medievalchronicles.com][Medieval Chronicles]]: A library about medieval stuff.
+  
+** Games
+- [[https://app.roll20.net/][Roll20]]: For the free online TTRPG experience.
+- [[https://sonome.dareno.me/][Committee of Zero]]: A group that provides fan improvement patches with fixes for the Science Adventure Series by 5pb., Nitroplus, and Chiyomaru Studio.
 
 ** Code Repositories
 - [[https://github.com/NixOS/nixpkgs][Nixpkgs]]: Nix Packages collection.
@@ -27,3 +31,13 @@ Random links I find useful
 - [[https://github.com/emacs-lsp/lsp-mode][lsp-mode]]: Emacs library for Language Server Protocol.
 - [[https://gitlab.com/qemu-project/qemu][QEMU]]: The famous virtualization API library.
 - [[https://gitlab.com/libvirt/libvirt/][libvirt]]: The famous virtualization API library.
+
+** Torrent Trackers
+- I won't post any private trackers even if you want me to.
+- [[https://1377x.to/][1337x]]: All purpose public tracker
+- [[https://rutracker.org/][RuTracker]]: All purpose public tracker (Russian).
+- [[https://nyaa.si][Nyaa]]: The anime public tracker, also has JP music, games, manga, books and software. Mirror for blocked countries: [[https://nyaa.iss.one]].
+- [[https://en.metal-tracker.com][METAL-TRACKER.COM]]: Public metal music tracker.
+
+** Misc
+- [[https://www.proxysite.com/][ProxySite]]: I use it to download large GitHub assets.
