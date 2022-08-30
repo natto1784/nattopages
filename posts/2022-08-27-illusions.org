@@ -1,0 +1,76 @@
+---
+title: Illusions
+author: AlpaViraam
+tags: poetry, english
+---
+
+* 1
+#+begin_verse
+The thought strata collapses on its own,
+Like a tower of cards falling apart,
+Except that the wind is absent,
+Or so it seems.
+
+The aesthetics are purely an illusion,
+Lost in the pursuit of objectivity,
+Gliding through the wishful sky,
+Wishing for what one is not.
+
+The tears are flown into a river,
+But the cause is left unknown,
+Unknown to whom is not a question,
+But just a yearned illusion.
+
+The innards were spoiled long ago,
+Or maybe even moved to another dimension,
+Or maybe just another illusion,
+Or maybe a result of believing in one.
+#+end_verse
+
+#+begin_export html
+<!--more-->
+#+end_export
+
+* 2
+#+begin_verse
+The tower that once existed was tall,
+But now that same one is not,
+Or maybe it was never,
+But it was still magnificent,
+This is what the the self desires,
+What was then an ugly monument,
+Now is all glitters,
+But all glitters can be gold,
+For the observer is the sole god.
+
+The desire to rebuild it is present,
+Absent is the reasoning,
+The longing for the identity is present,
+Absent are the amends,
+Demolishing and building towers is not complicated,
+But breaking the cycle is hard,
+Maybe the tower was never needed at all,
+Present is already a synagogue.
+#+end_verse
+
+* 3
+#+begin_verse
+The meaning once existed,
+Or was it another illusion of it,
+The absense is excruciating,
+Although the truth is now known,
+The longing for one is still inevitable.
+
+The taste is absent,
+And so is the thrill,
+Return the goal that once existed,
+For without it I am no one,
+The reality is what I make.
+
+Fearing being a no one,
+Fearing being an outcast,
+It all makes no sense,
+Who is this no-one,
+Meaning was always a farce,
+Identity was the desire all along.
+#+end_verse
