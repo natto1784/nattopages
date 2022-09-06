@@ -14,13 +14,16 @@
 
 @font-face {
   font-family: 'Monoid Bold';
-  src: url('../fonts/Monoid-Bold.eot');
-  src: url('../fonts/Monoid-Bold-iefix.eot') format('embedded-opentype'), 
-  url('../fonts/Monoid-Bold.woff2') format('woff2'),
-  url('../fonts/Monoid-Bold.woff') format('woff'),
-  url('../fonts/Monoid-Bold.ttf') format('truetype');
-  font-weight: bold;
   font-style: normal;
+  font-weight: bold;
+  src: url('../fonts/Monoid-Bold.woff2') format('woff2'),
+}
+
+@font-family {
+  font-family: 'Monoid Regular';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/Monoid-Regular.woff2') format('woff2');
 }
 
 
@@ -187,7 +190,7 @@ article > section {
 }
 
 code {
-  font-family: 'Cascadia Code', sans-serif;
+  font-family: 'Monoid Regular', monospace;
 }
 
 code {
