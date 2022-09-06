@@ -1,0 +1,100 @@
+---
+title: QMK for Keychron K8 Pro
+author: natto
+enabletoc: true
+tags: qmk, c
+---
+* <<introduction>> Introduction
+I got my first mechanical keyboard and used QMk for the very first time. Messing around with QMK on Keychron K8 Pro is straightforward but people might struggle to find the default implementation for the board, so if that's what you're looking for, it is [[https://github.com/Keychron/qmk_firmware/tree/6829fbd074c11e731b92be11e7fa857b8ab9baba/keyboards/keychron/k8_pro][right here]], no need to waste your time.
+
+#+begin_export html
+<!--more-->
+#+end_export
+
+* Requirements
++ Git
++ C compiler (GCC)
++ QMK cli
++ nix package manager (optional)
+
+* Starting
+First wise thing to do would be fetching the default implementation for the board by Keychron, you can find it at the link in the [[introduction][introduction]]. Cloning the upstream repository or this fork would be a tremendous waste of time and storage, so I will just fetch the current revision here (make sure to update the branch later or just use the revision hash).
+
+#+begin_src sh
+git clone --branch bluetooth_playground --depth 1 git@github.com:Keychron/qmk_firmware.git
+#+end_src
+
+Next, you should get the QMK cli if you already do not. Install it using your favourite package manager but if you use nix, you can compile it easily from the current source without hassle from the QMK directory
+
+#+begin_src sh
+nix-shell
+#+end_src
+
+and using the nix cache is always an option.
+
+You might want to setup the QMK directory next
+
+#+begin_src sh
+qmk setup -H /path/to/qmk_firmware
+#+end_src
+
+* Compiling and flashing
+Very straightforward and from the QMK Wiki.
+
+#+begin_src sh
+qmk compile -kb keychron/k8_pro/ansi/rgb -km default -j 8
+#+end_src 
+
++ =-kb= takes the keyboard name and specifications. I have an RGB one with the ANSI layout, so I will use that.
++ =-km= takes the keymap. The default one will do now for now.
++ =-j= is a simple =-jobs= flag for compilation.
+
+Now, before flashing you must enter the DFU (bootloader) mode. Doing this on K8 Pro is slightly different than some other Keychron boards. From the manual:
++ Slide the switch to "OFF".
++ Connect the USB.
++ Hold the reset button (under your spacebar keycap).
++ Slide the switch to "Cable".
++ Release the reset button
+
+Flashing is similar to compiling
+#+begin_src sh
+qmk flash -kb keychron/k8_pro/ansi/rgb -km colemak-dhm -j 8
+#+end_src
+
+Some things to note here
++ You might require elevated privileges to flash
++ Not compiling first will automatically compile it before flashing.
++ There is a short-hand for both compiling and flashing but it is cleaner this way.
+
+* Keymaps
+As evident from the code, for the default keymap, there are four [[https://github.com/qmk/qmk_firmware/blob/f73330755153912f18619cfeaefe0270394e0daf/docs/feature_layers.md][layers]] in the code.
+
+#+begin_src c
+enum layers{
+  MAC_BASE,
+  MAC_FN,
+  WIN_BASE,
+  WIN_FN
+};
+#+end_src
+
+I personally use neither a Windows machine nor a Macintosh, the switch is just a glorified pin to toggle between layer 0 and layer 2, so I decided to change the layers to Colemak and QWERTY layouts instead; keeping a common MO layer =ALT_KEYS= bound to the "fn" key for both the layouts. So it now looks like this
+
+#+begin_src c
+enum layers{
+  COLEMAK_DHM,
+  QWERTY,
+  ALT_KEYS
+};
+#+end_src
+This demands a change for the toggle to be between layers 0 and 1 instead of 0 and 2. This can be easily done by making the following change on =k8_pro.c:63=
+
+#+begin_src diff
+-        default_layer_set(1UL << (active ? 2 : 0));
++        default_layer_set(1UL << (active ? 1 : 0));
+#+end_src
+
+I will experiment with the unicode later today and add more stuff like Devanagri, Gurmukhi and the Roman accented symbols.
+
+* Conclusion
+It was pretty easy to follow the documentation and was fun. I have not yet checked all the things QMK is capable of but I definitely will. The implementations for Siri and Cortana are very messy and ugly but can be used as an example for a clean implementation for maybe, something other than Siri or Cortana.
