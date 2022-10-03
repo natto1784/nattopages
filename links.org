@@ -13,6 +13,8 @@ Random links I find useful
 ** Reading and writing
 - [[https://writing.stackexchange.com][Writing StackExchange]]: Q&A for writing.
 - [[https://worldbuilding.stackexchange.com][Worldbuilding StackExchange]]: Q&A regarding worldbuilding.
+- [[https://critters.org/][Critters]]: Critique other works and get yours critiqued.
+- [[https://boards.4channel.org/lit/catalog][/wg/]]: 4chan writing general on \/lit\/
 - [[https://www.myanonamouse.net][MyAnonamouse]]: A private torrent tracker for books.
 - [[https://punjabilibrary.com/][ਪੰਜਾਬੀ ਲਾਇਬ੍ਰੇਰੀ]]: Punjabi Library, a library for Punjabi books and audiobooks.
 - [[https://syosetu.com/][小説家になろう]]: Shōsetsuka ni Narō, a Japanese novel publishing website.
@@ -20,10 +22,19 @@ Random links I find useful
 ** History
 - [[https://www.larsdatter.com/index.html][Larsdatter]]: Medieval & Rennaissance Material Culture.
 - [[https://www.medievalchronicles.com][Medieval Chronicles]]: A library about medieval stuff.
-  
+- [[http://www.perseus.tufts.edu/hopper/collections][Perseus Digital Library]]: Limited range of stuff to read across a number of cultures.
+
 ** Games
 - [[https://app.roll20.net/][Roll20]]: For the free online TTRPG experience.
 - [[https://sonome.dareno.me/][Committee of Zero]]: A group that provides fan improvement patches with fixes for the Science Adventure Series by 5pb., Nitroplus, and Chiyomaru Studio.
+
+** Language Learning
+- [[https://ankiweb.net/shared/decks/][Anki Decks]]: Download respective Anki decks for your languages here.
+- [[https://learnjapanese.moe/][TheMoeWay]]: Learn Japanese the moe way.
+- [[https://itazuraneko.neocities.org/][Itazuarneko]]: Another great guide for learning Japanese.
+- [[https://foosoft.net/projects/yomichan/][Yomichan]]: Pop up dictionary for Japanese (supports AnkiConnect).
+- [[https://github.com/pnlpal/dictionariez][Dictionariez]]: Similar to Yomichan but for other languages.
+- [[https://www.languages-on-fire.com/][Languages On Fire]]: [PAYWALLED]  Learn German here (use their Anki Deck too).
 
 ** Code Repositories
 - [[https://github.com/NixOS/nixpkgs][Nixpkgs]]: Nix Packages collection.
@@ -31,9 +42,10 @@ Random links I find useful
 - [[https://github.com/emacs-lsp/lsp-mode][lsp-mode]]: Emacs library for Language Server Protocol.
 - [[https://gitlab.com/qemu-project/qemu][QEMU]]: The famous virtualization API library.
 - [[https://gitlab.com/libvirt/libvirt/][libvirt]]: The famous virtualization API library.
+- [[https://github.com/CompVis/stable-diffusion][Stable Diffusion]]: Text2Image and Image2Image diffusion scripts for the SD models.
 
 ** Torrent Trackers
-- I won't post any private trackers even if you want me to.
+- I won't post any more private trackers even if you want me to.
 - [[https://1377x.to/][1337x]]: All purpose public tracker
 - [[https://rutracker.org/][RuTracker]]: All purpose public tracker (Russian).
 - [[https://nyaa.si][Nyaa]]: The anime public tracker, also has JP music, games, manga, books and software. Mirror for blocked countries: [[https://nyaa.iss.one]].
