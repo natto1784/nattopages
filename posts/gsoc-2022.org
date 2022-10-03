@@ -1,0 +1,85 @@
+---
+title: Google Summer of Code 2022
+author: natto
+tags: gsoc, c
+enabletoc: true
+published: September 23, 2022
+enablenumbering: true
+---
+#+OPTIONS: ^:nil
+
+Google Summer of Code has come to an end with this week. It has been a relatively new experience for me and I will be sharing it in this post.
+
+* The goal
+The goal was to write an API for querying the KVM statistics in libvirt for which QEMU already has a QMP command called "query-stats".
+
+* The importance
+Statistics are useful to developers (of libvirt and others) and users (of libvirt) alike. The more statistics, the better, and verbosity helps in that too. They are an important part of inspection and working on something involving libvirt, or it might help some hobbyist or enthusiast with whatever it is they want to accomplish. Regardless, they are bound to be of some use at some point, if not right now, and if QEMU is convenient enough to provide them, then why not parse them?
+
+#+begin_export html
+<!--more-->
+#+end_export
+
+* The work
+This might come off as rude or unexpected but the work itself was nothing much really. Things were relatively easy to understand and most problems were caused by either my stupid schedule and my lack of basic common sense, and my clumsiness is always there to blame; the mentors always helped me with whatever I needed help with. I will continue to look after at least this part of the code and help in whatever way I can, even with other things in libvirt and surrounding projects, if possible.
+
+* Why even do it
+I had been on a long break from programming (and IT tinkering) for around an year. This seemed like a very nice and relatively easier place to get started again and at the same time learn new stuff as well. I won't lie that the stipend is not appealing for a freshman either.
+
+* Mistakes
+I kept on piling up stupid amounts of side stuff to do alongside GSoC when I had my college to attend to as well. Things got pretty bad, I tried keeping up apperances everywhere but it was pretty obvious anyway.
+
+* What I learnt
+- Well interacting in a mailing list was a first, always was curious and there was this mysterious air around it, turns out it is not exactly mysterious.
+- My mentors were the best part of the project, learnt that kind people do, in fact, exist.
+- How cover letter and commit messages are really important. This might seem obvious but it is still a learning experience in practice and a very important thing to keep in mind.
+- How cool GLib is in preventing memory leaks and stuff. This was my first time working with it.
+- How working on something is not always going to be fun and exciting but is still important.
+- And most importantly, why taking up a lot of work in the middle of a student program and being a full time student is a very bad decision.
+
+* The mentors (and the organization)
+They were the saving grace for my miserable condition. Super kind people and super patient as well, helped me whenever I had problems and never overlooked any part of their mentoring. They kept up with my pitiable schedule, although I was the one making excuses for it. They taught me a lot of stuff too that comes with working on a project like =libvirt=. If I were to become an employee of a distinguished firm or a project, I would want to be like them for sure; cannot praise them enough as a mentee.
+
+* The patches
+** Merged
+So far only the support for "query-stats" has been merged and implemented for querying the halt poll status for vCPUs.
+*** [[https://listman.redhat.com/archives/libvir-list/2022-August/233737.html][qemu: add an API for "query-stats" QMP command]]
++ [[https://listman.redhat.com/archives/libvir-list/2022-August/233735.html][qemu_monitor: add qemuMonitorQueryStats]] [[[https://gitlab.com/libvirt/libvirt/-/commit/3b265520f17cdc2845c35c80517f1acd38f474ee][GitLab]]]
++ [[https://listman.redhat.com/archives/libvir-list/2022-August/233736.html][qemu_capabilities: add "query-stats" QMP command to the QEMU capabilities]] [[[https://gitlab.com/libvirt/libvirt/-/commit/ceaa74dfe059878ddbb52cbe583dfad5812391f5][GitLab]]]
++ [[https://listman.redhat.com/archives/libvir-list/2022-August/233734.html][qemu_driver: use qemuMonitorQueryStats to extract halt poll time]] [[[https://gitlab.com/libvirt/libvirt/-/commit/6353e8f5c1f8336a58c2fde93c1c17de224a4dfb][GitLab]]]
+
+** Unmerged
+*** [[https://listman.redhat.com/archives/libvir-list/2022-September/234197.html][qemu: add support for query-stats-schemas]]
+First up is the basic API support for the "query-stats-schemas" QMP command and its usage to get vCPU and VM stats, they need some refinement.
++ [[https://listman.redhat.com/archives/libvir-list/2022-September/234196.html][qemu_monitor: add qemuMonitorQueryStatsSchema]]
++ [[https://listman.redhat.com/archives/libvir-list/2022-September/234198.html][qemu_capabilities: add "query-stats-schemas" QMP command to the QEMU capabilities]] 
++ [[https://listman.redhat.com/archives/libvir-list/2022-September/234200.html][qemu_domain: add statsSchema to qemuDomainObjPrivate]]
++ [[https://listman.redhat.com/archives/libvir-list/2022-September/234199.html][qemu_monitor: add qemuMonitorGetStatsByQOMPath]]
++ [[https://listman.redhat.com/archives/libvir-list/2022-September/234202.html][qemu_driver: add the vCPU stats by KVM to the current stats]]
++ [[https://listman.redhat.com/archives/libvir-list/2022-September/234201.html][qemu_driver: add new stats worker qemuDomainGetStatsVm]]
+
+*** [[https://listman.redhat.com/archives/libvir-list/2022-September/234402.html][add support for histograms as a virTypedParameterType]]
+Next is the even more unrefined additon of histograms to virTypedParameterType to support histograms which were previously ignored.
++ [[https://listman.redhat.com/archives/libvir-list/2022-September/234404.html][virtypedparam: add virHistogram as a virTypedParameterType]]
++ [[https://listman.redhat.com/archives/libvir-list/2022-September/234403.html][add a global feature for supporting virHistogram]]
++ [[https://listman.redhat.com/archives/libvir-list/2022-September/234405.html][virtypedparams: add VIR_TYPED_PARAM_HISTOGRAM_OKAY]]
++ [[https://listman.redhat.com/archives/libvir-list/2022-September/234406.html][qemu_driver: add histograms to the stats]]
++ [[https://listman.redhat.com/archives/libvir-list/2022-September/234407.html][remote: add virHistogram support for RPC as a virTypedParameterType]]
+The commit messages for this set are more hideous than I initially thought.
+
+* What comes next
+** Stage 1 (with querying stats in libvirt)
+A bunch of things really
++ I have some tests for query-stats and query-stats-schemas that I shall post as soon as possible.
++ Refining the current patches and getting them merged (and the tests mentioned above too).
++ Some extensions like working with units and exponents provided by the schema to provide more verbose statistics.
++ Keeping an eye on what changes are made with QMP or the relevant commands upstream (QEMU source).
+
+** Stage 2 (with libvirt)
+Virtualisation is something I always wanted to learn about and while I learnt about a lot of things, I have barely even scratched the surface. =libvirt= being an API collection for major hypervisors is a good starting point for learning about the data communicated between these cogs, so I shall keep on learning and contributing to it.
+
+** Stage 3 (with other projects)
+QEMU piques my interest, but I barely know anything about virtualisation besides whatever I "worked" on. I shall learn more about it along with the surrounding projects before I go deep into the QEMU/KVM source. That definitely requires me to get rid of or complete all the tasks I have on my hands right now.
+
+* Final word
+It was a learning experience, authough refreshing, the severity of my schedule made it frustrating; however, learning stuff beyond programming was nice. I could have gone for more "interesting" projects and maybe I would have had a good time with it but this was a good returning point; also helped me learn that life is not an amusement park and there are bound to be things that are going to be boring and someone has to do them. Besides this was not entirely boring, learnt new stuff. Maybe I will go back to programming and tinkering with stuff again after all.
