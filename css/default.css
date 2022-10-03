@@ -141,7 +141,7 @@ h2 {
 .post-preview-item {
  list-style-type: none;
  padding: 2rem;
- border: 0.2rem ridge var(--violet);
+ border: 0.2rem ridge var(--fg5);
 }
 
 .post-preview-item:not(:last-child) {
