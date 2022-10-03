@@ -3,6 +3,7 @@ title: QMK for Keychron K8 Pro
 author: natto
 enabletoc: true
 tags: qmk, c
+published: September 7, 2022
 ---
 * <<introduction>> Introduction
 I got my first mechanical keyboard and used QMk for the very first time. Messing around with QMK on Keychron K8 Pro is straightforward but people might struggle to find the default implementation for the board, so if that's what you're looking for, it is [[https://github.com/Keychron/qmk_firmware/tree/6829fbd074c11e731b92be11e7fa857b8ab9baba/keyboards/keychron/k8_pro][right here]], no need to waste your time.

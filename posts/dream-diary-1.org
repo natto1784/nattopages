@@ -3,6 +3,7 @@ title: Dream Diary 1
 tags: dream_diary
 author: natto
 enabletoc: true
+published: June 27, 2022
 ---
 
 *WARNING: Highly chuunibyou content*

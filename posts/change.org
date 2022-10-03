@@ -2,6 +2,7 @@
 title: Change?
 author: Amneesh
 tags: random
+published: August 10, 2022
 ---
 I have decided to change (or revert) to a better person today.
 

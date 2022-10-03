@@ -2,6 +2,7 @@
 title: छवि
 author: AlpaViraam
 tags: poetry, hindi
+published: July 20, 2022
 ---
 आधी रात पश्चात की कुछ स्वलिखित पंक्तियाँ।
 #+begin_export html
