@@ -5,9 +5,9 @@ title: About
 * Alo
 My name is Amneesh Singh but I also go as natto (or natto1784) online. I was born in the blazing hot summer of 2003 in India, where I also currently reside (just in a different region). I am currently a freshman in college studying engineering. My major is Information Technology. I struggle with basic tasks but I can barely help that.
 
-I like a lot of things but currently I am into Emacs and functional programming. I also enjoy listening to Trivium. But the thing that I like the most is sleeping, I really do sleep a lot.
+I like a lot of things, however I am on a long break from IT tinkering and programming and am into Lacan's PA at the moment.
 
-I dislike particularly nothing
+I dislike particularly nothing.
 
 * Socials
 - [[https://twitter.com/natto1784][Twitter]]
