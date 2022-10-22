@@ -133,6 +133,7 @@ postCtx tags =
   tagsField "tags" tags
     --    <> teaserFieldWithSeparator "((.tease.))" "teaser" "content"
     <> dateField "date" "%B %e, %Y"
+    <> modificationTimeField "modified" "%B %e, %Y"
     <> teaserField "teaser" "content"
     <> defaultCtx
 
