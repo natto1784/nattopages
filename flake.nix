@@ -2,7 +2,7 @@
   description = "My personal website";
 
   inputs = {
-    nixpkgs.url = github:nixos/nixpkgs/nixos-unstable;
+    nixpkgs.url = github:nixos/nixpkgs/release-22.05;
     utils.url = github:numtide/flake-utils;
   };
 
@@ -25,17 +25,22 @@
             phases = "unpackPhase buildPhase";
             nativeBuildInputs = [ site ];
             buildPhase = (pkgs.lib.concatStringsSep "\n" vars ) + ''
-              log=$(site build)
               mkdir -p $out
               cp -r \_site/* $out
             '';
           };
         in
         rec {
-          devShell = with pkgs; mkShell {
+          devShell = with pkgs.haskellPackages; shellFor {
+            packages = _: [ site ];
+            withHoogle = true;
             buildInputs = [
+              cabal-install
               haskell-language-server
-              (haskellPackages.ghcWithPackages (h: with h; [ hakyll pandoc ]))
+              ghcid
+            ];
+            nativeBuildInputs = with pkgs; [
+              zlib
             ];
           };
           packages = {
