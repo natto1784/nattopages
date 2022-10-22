@@ -1,0 +1,22 @@
+---
+title: I am done with ConcourseCI
+author: natto
+tags: ci, devops, concourse
+published: October 20, 2022
+enabletoc: true
+---
+
+* Background
+I spent a lot of time (almost entire February/March and random days here and there) on learning concourse, setting it up (under Nomad with Vault on an aarch64 NixOS machine with limited resources, you know which one) and working on resources for it to work with Gitea earlier this year. I spent so much time on something that I am probably never going to use again and I hate myself for it.
+
+* KIA
+What was lost? A lot of time and more time dwelling upon the formerly wasted time. I could have used that time for my many other hobbies or I could have spent more time on other stuff, like programming, that I actually enjoy but lack experience in.
+
+* Why even
+I used concourse because of the shills that like to shill every relatively obscure thing out there. Just because it is hard to understand and has sophisticated (arguable) internals does not mean it is practical and fun. I do not hate concourse all that much but it fails to complete my needs and I refuse to work on resources for every little thing, maybe will work on improving the support some time later in the distant future, but not now. It might be good for complicated pipelines but mine are relatively simple.
+
+* Starting over is hard
+Starting over again is seriously hard, how will I ever be able to justify the lost time? But ideally, I should not feel the need to justify it.
+
+* What now
+I will use DroneCI as soon as I am done with rewiring this stupid pile of messs at my home. It is not much better than concourse but it fits my needs. I am afraid that it might just be another concourse and if that happens, I will give up on self hosting and move completely to GitHub+Actions or GitLab but let's try to avoid that since that is no +pain+ fun. Goodbye concourse, I do not hate you but we cannot be together.
