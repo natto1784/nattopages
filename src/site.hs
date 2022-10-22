@@ -13,16 +13,14 @@ import Text.Pandoc.Templates (Template, compileTemplate)
 
 main :: IO ()
 main = hakyllWith config $ do
-  
-  match "images/logos/*" $ do
+  let
+    individualPatterns = fromList ["about.org", "contact.org", "links.org"]
+
+  match "images/**" $ do
     route idRoute
     compile copyFileCompiler
-
+    
   match "fonts/*" $ do
-    route idRoute
-    compile copyFileCompiler
-
-  match "sitemap.xml" $ do
     route idRoute
     compile copyFileCompiler
 
@@ -30,7 +28,7 @@ main = hakyllWith config $ do
     route idRoute
     compile compressCssCompiler
 
-  match (fromList ["about.org", "contact.org", "links.org"]) $ do
+  match individualPatterns $ do
     route $ setExtension "html"
     compile $
       pandocCompiler
@@ -103,9 +101,18 @@ main = hakyllWith config $ do
       posts <- fmap (take 10) . recentFirst =<< loadAllSnapshots "posts/*" "content"
       renderRss rssFeedConfiguration feedCtx posts
 
-  match "images/*" $ do
+-- https://robertwpearce.com/hakyll-pt-2-generating-a-sitemap-xml-file.html
+  create ["sitemap.xml"] $ do
     route idRoute
-    compile copyFileCompiler
+    compile $ do
+        posts <- recentFirst =<< loadAll "posts/*"
+        individualPages <- loadAll individualPatterns
+        let pages = posts <> individualPages
+            sitemapCtx =
+                listField "pages" (postCtx tags) (return pages)
+                  <> defaultCtx
+        makeItem ""
+            >>= loadAndApplyTemplate "templates/sitemap.xml" sitemapCtx
 
   match "templates/*" $ compile templateBodyCompiler
 
@@ -133,6 +140,7 @@ postCtx tags =
   tagsField "tags" tags
     --    <> teaserFieldWithSeparator "((.tease.))" "teaser" "content"
     <> dateField "date" "%B %e, %Y"
+    <> dateField "altdate" "%Y-%m-%d"
     <> modificationTimeField "modified" "%B %e, %Y"
     <> teaserField "teaser" "content"
     <> defaultCtx
