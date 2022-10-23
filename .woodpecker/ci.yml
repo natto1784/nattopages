@@ -1,0 +1,20 @@
+pipeline:
+  build-and-deploy:
+    image: nixos/nix:latest
+    environment: 
+      - TARGET_HOST=weirdnatto.in
+      - TARGET_PORT=22001
+    commands:
+      - nix-env -iA nixpkgs.cachix nixpkgs.rsync nixpkgs.jq
+      - cachix use $CACHIX_NAME
+      - nix --extra-experimental-features "nix-command flakes" -L build -o site
+       | jq -r '.[].outputs | to_entries[].value'
+       | cachix push $CACHIX_NAME
+      - eval `ssh-agent -s`
+      - mkdir -p ~/.ssh
+      - ssh-keyscan -p $TARGET_PORT $TARGET_HOST >> ~/.ssh/known_hosts
+      - echo "$REMOTE_KEY" | ssh-add -
+      - rsync --checksum -ave "ssh -p $TARGET_PORT" 
+        site/* root@$TARGET_HOST:/var/lib/site
+
+    secrets: [ cachix_auth_token, cachix_name, remote_key ]

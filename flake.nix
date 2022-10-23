@@ -13,21 +13,34 @@
           pkgs = import nixpkgs {
             inherit system;
           };
-          
+
+          inherit (pkgs.lib.sources) cleanSourceWith cleanSource;
+
+          filterCI = name: type:
+            !((type == "directory") && (baseNameOf name == ".woodpecker"));
+
+          cleanSrc = cleanSourceWith {
+            filter = filterCI;
+            src = cleanSource ./.;
+          };
+
           vars = pkgs.lib.mapAttrsToList (n: v: "export ${n}=${v}") {
+            LOCALE_ARCHIVE = "${pkgs.glibcLocales}/lib/locale/locale-archive";
             LANG = "en_US.UTF-8";
           };
-          
+
           site = pkgs.haskellPackages.callCabal2nix "nattopages" ./src { };
           nattopages = pkgs.stdenv.mkDerivation {
             name = "nattopages";
-            src = ./.;
+            src = cleanSrc;
             phases = "unpackPhase buildPhase";
             nativeBuildInputs = [ site ];
-            buildPhase = (pkgs.lib.concatStringsSep "\n" vars ) + ''
-              mkdir -p $out
-              cp -r \_site/* $out
-            '';
+            buildPhase = (pkgs.lib.concatStringsSep "\n" vars) + "\n" +
+              ''
+                site build
+                mkdir -p $out
+                cp -r _site/* $out
+              '';
           };
         in
         rec {
