@@ -3,6 +3,7 @@ title: I am done with ConcourseCI
 author: natto
 tags: ci, devops, concourse
 published: October 20, 2022
+modified: October 23, 2022
 enabletoc: true
 ---
 
@@ -20,3 +21,8 @@ Starting over again is seriously hard, how will I ever be able to justify the lo
 
 * What now
 I will use DroneCI as soon as I am done with rewiring this stupid pile of messs at my home. It is not much better than concourse but it fits my needs. I am afraid that it might just be another concourse and if that happens, I will give up on self hosting and move completely to GitHub+Actions or GitLab but let's try to avoid that since that is no +pain+ fun. Goodbye concourse, I do not hate you but we cannot be together.
+
+-----
+
+* UPDATE 1
+I might just use WoodpeckerCI but it lacks support for Vault. I shall try it regardless since [[https://github.com/woodpecker-ci/woodpecker/pull/915][this PR]] exists.
