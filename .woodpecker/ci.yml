@@ -1,7 +1,7 @@
 pipeline:
   build-and-deploy:
     image: nixos/nix:latest
-    environment: 
+    environment:
       - TARGET_HOST=weirdnatto.in
       - TARGET_PORT=22001
     commands:
@@ -14,7 +14,7 @@ pipeline:
       - mkdir -p ~/.ssh
       - ssh-keyscan -p $TARGET_PORT $TARGET_HOST >> ~/.ssh/known_hosts
       - echo "$REMOTE_KEY" | ssh-add -
-      - rsync --checksum -ave "ssh -p $TARGET_PORT" 
+      - rsync --checksum -ave "ssh -p $TARGET_PORT"
         site/* root@$TARGET_HOST:/var/lib/site
 
     secrets: [ cachix_auth_token, cachix_name, remote_key ]
