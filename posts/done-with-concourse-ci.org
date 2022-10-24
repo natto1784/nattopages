@@ -26,3 +26,6 @@ I will use DroneCI as soon as I am done with rewiring this stupid pile of messs 
 
 * UPDATE 1
 I might just use WoodpeckerCI but it lacks support for Vault. I shall try it regardless since [[https://github.com/woodpecker-ci/woodpecker/pull/915][this PR]] exists.
+
+* UPDATE 2
+Okay so I spent an entire day experimenting; and while Woodpecker is very promising, it is stupid simple and thus, lacks what it takes to be a CI for more complex projects. Luckily, I do not have any complex projects, at least not right now. When I do, I shall move back to concourse perhaps and I hope that by that time, there will be multi arch support.
