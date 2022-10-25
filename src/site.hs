@@ -13,13 +13,12 @@ import Text.Pandoc.Templates (Template, compileTemplate)
 
 main :: IO ()
 main = hakyllWith config $ do
-  let
-    individualPatterns = fromList ["about.org", "contact.org", "links.org"]
+  let individualPatterns = fromList ["about.org", "contact.org", "links.org"]
 
   match "images/**" $ do
     route idRoute
     compile copyFileCompiler
-    
+
   match "fonts/*" $ do
     route idRoute
     compile copyFileCompiler
@@ -62,7 +61,7 @@ main = hakyllWith config $ do
       let writerOptions' = maybe defaultHakyllWriterOptions (const $ writerOptions $ isJust numbering) toc
       pandocCompilerWith defaultHakyllReaderOptions writerOptions'
         >>= saveSnapshot "content"
-        >>= loadAndApplyTemplate "templates/post.html" (postCtx tags <> teaserField "teaser" "content")
+        >>= loadAndApplyTemplate "templates/post.html" (postCtx tags)
         >>= loadAndApplyTemplate "templates/default.html" (postCtx tags)
         >>= relativizeUrls
 
@@ -101,28 +100,29 @@ main = hakyllWith config $ do
       posts <- fmap (take 10) . recentFirst =<< loadAllSnapshots "posts/*" "content"
       renderRss rssFeedConfiguration feedCtx posts
 
--- https://robertwpearce.com/hakyll-pt-2-generating-a-sitemap-xml-file.html
+  -- https://robertwpearce.com/hakyll-pt-2-generating-a-sitemap-xml-file.html
   create ["sitemap.xml"] $ do
     route idRoute
     compile $ do
-        posts <- recentFirst =<< loadAll "posts/*"
-        individualPages <- loadAll individualPatterns
-        let pages = posts <> individualPages
-            sitemapCtx =
-                listField "pages" (postCtx tags) (return pages)
-                  <> defaultCtx
-        makeItem ""
-            >>= loadAndApplyTemplate "templates/sitemap.xml" sitemapCtx
+      posts <- recentFirst =<< loadAll "posts/*"
+      individualPages <- loadAll individualPatterns
+      let pages = posts <> individualPages
+          sitemapCtx =
+            listField "pages" (postCtx tags) (return pages)
+              <> defaultCtx
+      makeItem ""
+        >>= loadAndApplyTemplate "templates/sitemap.xml" sitemapCtx
 
   match "templates/*" $ compile templateBodyCompiler
 
 rssFeedConfiguration :: FeedConfiguration
-rssFeedConfiguration = FeedConfiguration
-    { feedTitle       = "nattopages"
-    , feedDescription = "Pages by natto"
-    , feedAuthorName  = "Amneesh Singh"
-    , feedAuthorEmail = "natto@weirdnatto.in"
-    , feedRoot        = "https://weirdnatto.in"
+rssFeedConfiguration =
+  FeedConfiguration
+    { feedTitle = "nattopages",
+      feedDescription = "Pages by natto",
+      feedAuthorName = "Amneesh Singh",
+      feedAuthorEmail = "natto@weirdnatto.in",
+      feedRoot = "https://weirdnatto.in"
     }
 
 config :: Configuration
@@ -141,7 +141,6 @@ postCtx tags =
     --    <> teaserFieldWithSeparator "((.tease.))" "teaser" "content"
     <> dateField "date" "%B %e, %Y"
     <> dateField "altdate" "%Y-%m-%d"
- --   <> modificationTimeFieldWith TimeLocale.knownTimeZones. "modified" "%B %e, %Y"
     <> teaserField "teaser" "content"
     <> defaultCtx
 
