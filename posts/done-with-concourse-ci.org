@@ -3,12 +3,16 @@ title: I am done with ConcourseCI
 author: natto
 tags: ci, devops, concourse
 published: October 20, 2022
-modified: October 24, 2022
+modified: October 25, 2022
 enabletoc: true
 ---
 
 * Background
 I spent a lot of time (almost entire February/March and random days here and there) on learning concourse, setting it up (under Nomad with Vault on an aarch64 NixOS machine with limited resources, you know which one) and working on resources for it to work with Gitea earlier this year. I spent so much time on something that I am probably never going to use again and I hate myself for it.
+
+#+begin_export html
+<!--more-->
+#+end_export html
 
 * KIA
 What was lost? A lot of time and more time dwelling upon the formerly wasted time. I could have used that time for my many other hobbies or I could have spent more time on other stuff, like programming, that I actually enjoy but lack experience in.
@@ -29,3 +33,6 @@ I might just use WoodpeckerCI but it lacks support for Vault. I shall try it reg
 
 * UPDATE 2
 Okay so I spent an entire day experimenting; and while Woodpecker is very promising, it is stupid simple and thus, lacks what it takes to be a CI for more complex projects. Luckily, I do not have any complex projects, at least not right now. When I do, I shall move back to concourse perhaps and I hope that by that time, there will be multi arch support.
+
+* UPDATE 3
+What timing! It is here, they added architecture specification for the registry image resource [[https://github.com/concourse/registry-image-resource/pull/36][here]]. I might go back to concourse in a few days and make a Gitea status resource.
