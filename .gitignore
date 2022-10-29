@@ -9,3 +9,6 @@ dist-newstyle
 _site
 _cache
 .cache
+!images/dailies
+images/dailies/*
+!images/dailies/stub
