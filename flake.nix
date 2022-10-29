@@ -33,17 +33,8 @@
           nattopages = pkgs.stdenv.mkDerivation {
             name = "nattopages";
             src = cleanSrc;
-            phases = "unpackPhase patchPhase buildPhase";
+            phases = "unpackPhase buildPhase";
             nativeBuildInputs = [ site ];
-            patchPhase =
-              let
-                cachix = "pain";
-              in
-              ''
-                substituteInPlace templates/default.html \
-                  --replace '{+nixstorepath+}' $out \
-                  --replace '{+cachix+}' ${cachix}
-              '';
             buildPhase = (pkgs.lib.concatStringsSep "\n" vars) + "\n" +
               ''
                 site build
