@@ -1,0 +1,14 @@
+$for(today)$
+  <article>
+      <h1 class="post-title">$title$</h1>
+      <div class="post-teaser">
+            $body$
+      </div>
+      <hr>
+  </article>
+$endfor$
+
+<p>
+ <h3> Previous Dailies: </h3>
+</p>
+$partial("templates/post-list.html")$
