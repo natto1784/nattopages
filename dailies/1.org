@@ -8,12 +8,12 @@ Doing chores sucks but errands suck more. Also self hosting shit sucks, but I do
 
 * Image of the Day
 #+ATTR_HTML: :alt Bro thinks he GettyImages 💀
-[[../images/dailies/modinazisalute.png]]
+[[https://f.weirdnatto.in/sshb-modinazisalute.png]]
 
 * Video of the Day
 #+begin_export html
 <video controls>
-  <source src=../images/dailies/osakasohigh.mp4" type="video/mp4">
+  <source src="https://f.weirdnatto.in/ZOUJ-osakasohigh.mp4" type="""video/mp4">
 </video> 
 #+end_export
 
