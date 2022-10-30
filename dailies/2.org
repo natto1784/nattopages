@@ -1,0 +1,26 @@
+---
+title: "Daily #2"
+author: natto
+published: October 30, 2022
+---
+* Hm?
+I have really shitty internet bandwidth and I have a lot of work pending (that does not involve internet).
+
+* Image of the Day
+#+ATTR_HTML: :alt Your dreams and hopes are incompatible with reality.
+[[http://f.weirdnatto.in/3eW6-dreams.png]]
+
+* Video of the Day
+#+begin_export html
+MEGU MEGU FIRE ENDLESS NIGHT SOSHITE MOTTO MOTTO ATSUKU NARE FEVER
+<iframe src="https://youtube.com/embed/N6FfOevhA10 " width=800px height=450px />
+#+end_export
+
+* Song of the Day
+Sofia Vempo's version/cover of Misirlou
+#+begin_export html
+<iframe src="https://youtube.com/embed/8myXQRe-WcY" width=800px height=450px />
+#+end_export
+
+* Thought of the Day
+Everyone on the internet is a loser (including me). Shit sucks.
