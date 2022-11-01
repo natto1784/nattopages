@@ -1,0 +1,10 @@
+---
+title: Goodbye Hashistack
+author: natto
+tags: devops, hashicorp, nomad
+published: November 01, 2022
+---
+
+I have decided to stop running HashiStack. As some of you might know, I only run a RaspberryPi4B for a server for power related reasons and lack of old cheap server hardware. It is not the best hardware to orchestrate containers on, especially when it already has NixOS installed. I do not use extravagant software and my setup from earlier this year was very overkill. I recently [[./done-with-concourse-ci.html][stopped using CI at all]] since I realised I do not really need it. This post is about similar feelings. I have spent a shit ton of time learning HashiStack this year and have decided to stop using it altogether in some time. 
+
+I just hope I will not regret wasting my time learning stuff that I am never going to use and will save me some headache in the future as well. Being a hobbyist is tough.
