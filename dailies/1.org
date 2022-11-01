@@ -13,7 +13,7 @@ Doing chores sucks but errands suck more. Also self hosting shit sucks, but I do
 * Video of the Day
 #+begin_export html
 <video controls>
-  <source src="https://f.weirdnatto.in/ZOUJ-osakasohigh.mp4" type="""video/mp4">
+  <source src="https://f.weirdnatto.in/ZOUJ-osakasohigh.mp4" type="video/mp4">
 </video> 
 #+end_export
 
