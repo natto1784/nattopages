@@ -13,13 +13,17 @@ I have really shitty internet bandwidth and I have a lot of work pending (that d
 * Video of the Day
 #+begin_export html
 MEGU MEGU FIRE ENDLESS NIGHT SOSHITE MOTTO MOTTO ATSUKU NARE FEVER
-<iframe src="https://youtube.com/embed/N6FfOevhA10 " width=800px height=450px />
+<div class="iframe-parent">
+  <iframe src="https://youtube.com/embed/N6FfOevhA10" />
+</div>
 #+end_export
 
 * Song of the Day
 Sofia Vempo's version/cover of Misirlou
 #+begin_export html
-<iframe src="https://youtube.com/embed/8myXQRe-WcY" width=800px height=450px />
+<div class="iframe-parent">
+  <iframe src="https://youtube.com/embed/8myXQRe-WcY" />
+</div>
 #+end_export
 
 * Thought of the Day

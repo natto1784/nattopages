@@ -19,7 +19,9 @@ College sucks, it makes me eepy.
 
 * Song of the Day
 #+begin_export html
-<iframe src="https://youtube.com/embed/N-cU-M_tX68" width=800px height=450px />
+<div class="iframe-parent">
+  <iframe src="https://youtube.com/embed/N-cU-M_tX68" />
+</div>
 #+end_export
 
 * Thought of the Day

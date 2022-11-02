@@ -20,7 +20,9 @@ Doing chores sucks but errands suck more. Also self hosting shit sucks, but I do
 * Song of the Day
 Been loving this one since my early adolescence.
 #+begin_export html
-<iframe src="https://youtube.com/embed/mGnJm0qIpFw" width=800px height=450px />
+<div class="iframe-parent">
+  <iframe src="https://youtube.com/embed/mGnJm0qIpFw" />
+</div>
 #+end_export
 
 * Thought of the Day

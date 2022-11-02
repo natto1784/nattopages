@@ -8,7 +8,7 @@ I really am a midwit.
 
 * Image of the Day
 Red and black, I dress eagle on my chest
-#+ATTR_HTML: :alt Red and black, I dress eagle on my chest :width 600px
+#+ATTR_HTML: :alt Red and black, I dress eagle on my chest
 [[https://f.weirdnatto.in/EXrJ-albaniagdp.jpg]]
 
 * Video of the Day
@@ -21,7 +21,9 @@ Welcome!
 
 * Song of the Day
 #+begin_export html
-<iframe src="https://youtube.com/embed/Nfql0PyA8D0" width=800px height=450px />
+<div class="iframe-parent">
+  <iframe src="https://youtube.com/embed/Nfql0PyA8D0" />
+</div>
 #+end_export
 
 * Thought of the Day
