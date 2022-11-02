@@ -1,0 +1,28 @@
+---
+title: "Daily #4"
+author: natto
+published: November 02, 2022
+---
+* Hm?
+I really am a midwit.
+
+* Image of the Day
+Red and black, I dress eagle on my chest
+#+ATTR_HTML: :alt Red and black, I dress eagle on my chest :width 600px
+[[https://f.weirdnatto.in/EXrJ-albaniagdp.jpg]]
+
+* Video of the Day
+Welcome!
+#+begin_export html
+<video controls>
+  <source src="https://f.weirdnatto.in/ftNe-myhouse.mp4" type="video/mp4">
+</video> 
+#+end_export
+
+* Song of the Day
+#+begin_export html
+<iframe src="https://youtube.com/embed/Nfql0PyA8D0" width=800px height=450px />
+#+end_export
+
+* Thought of the Day
+People show empathy towards animals and kids for obvious reasons (they cannot hurt their pride) but why do they fail to do the same for a complete stranger?
