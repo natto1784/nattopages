@@ -1,6 +1,7 @@
 ---
 title: Links
 ---
+#+OPTIONS: *:nil
 
 Random links I find useful
 
@@ -14,7 +15,7 @@ Random links I find useful
 - [[https://writing.stackexchange.com][Writing StackExchange]]: Q&A for writing.
 - [[https://worldbuilding.stackexchange.com][Worldbuilding StackExchange]]: Q&A regarding worldbuilding.
 - [[https://critters.org/][Critters]]: Critique other works and get yours critiqued.
-- [[https://boards.4channel.org/lit/catalog][/wg/]]: 4chan writing general on \/lit\/
+- [[https://boards.4channel.org/lit/catalog][/wg/]]: Writing general on /lit/
 - [[https://www.myanonamouse.net][MyAnonamouse]]: A private torrent tracker for books.
 - [[https://punjabilibrary.com/][ਪੰਜਾਬੀ ਲਾਇਬ੍ਰੇਰੀ]]: Punjabi Library, a library for Punjabi books and audiobooks.
 - [[https://syosetu.com/][小説家になろう]]: Shōsetsuka ni Narō, a Japanese novel publishing website.
