@@ -44,6 +44,7 @@ Random links I find useful
 - [[https://gitlab.com/qemu-project/qemu][QEMU]]: The famous virtualization API library.
 - [[https://gitlab.com/libvirt/libvirt/][libvirt]]: The famous virtualization API library.
 - [[https://github.com/CompVis/stable-diffusion][Stable Diffusion]]: Text2Image and Image2Image diffusion scripts for the SD models.
+- [[https://github.com/bakape/captchouli][Captchouli]]: Booru-backed procedurally-generated anime image captcha library and server 
 
 ** Torrent Trackers
 - I won't post any more private trackers even if you want me to.
