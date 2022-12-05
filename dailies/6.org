@@ -1,0 +1,29 @@
+---
+title: "Daily #6"
+author: natto
+published: December 06, 2022
+---
+* Hm?
+I really should be doing all the pending necessary work.
+
+* Image of the Day
+#+ATTR_HTML: :alt You should grow yourself, NOW!
+[[https://f.weirdnatto.in/kiKc-grow.jpg]]
+
+* Video of the Day
+#+begin_export html
+<video controls>
+  <source src="https://f.weirdnatto.in/t73H-luka.mp4" type="video/mp4">
+</video> 
+#+end_export
+
+* Music of the Day
+#+begin_export html
+<div class="iframe-parent">
+  <iframe src="https://youtube.com/embed/wGrGln_eE8I" />
+</div>
+#+end_export
+
+* Thought of the Day
+
+Everything is so exhausting, I refuse to think for today's thought.

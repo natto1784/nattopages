@@ -2,6 +2,7 @@
 title: Indic ligatures in terminal emulators
 author: natto
 tags: terminals, indic
+published: November 11, 2022
 ---
 * Preface
 I have been using the [[https://st.suckless.org/][simple terminal]], or =st=, by [[suckless.org]], for almost two years now, and it has been great. Unfortunately it has fixed width unicode support and hence hindi ligatures cannot be rendered properly. There is a [[https://st.suckless.org/patches/ligatures/][ligatures patch]] available but all it does it combine fixed width LTR ligatures. So I spent the last 8 hours or so looking for a way to implement it. Here is what I learnt.
