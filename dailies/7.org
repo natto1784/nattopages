@@ -1,0 +1,27 @@
+---
+title: "Daily #7"
+author: natto
+published: December 22, 2022
+---
+* Hm?
+I really, REALLY should be doing all the pending necessary work.
+
+* Video of the Day
+#+begin_export html
+<video controls>
+  <source src="https://f.weirdnatto.in/j3Kl-apdhillon.mp4" type="video/mp4">
+</video> 
+#+end_export
+
+* Music of the Day
+#+begin_export html
+<div class="iframe-parent">
+  <iframe src="https://youtube.com/embed/28yqd9Bf3OQ" />
+</div>
+<div class="iframe-parent">
+  <iframe src="https://youtube.com/embed/QZQQc4Z1rHo" />
+</div>
+#+end_export
+
+* Thought of the Day
+Life should only have two milestones, birth and death.
