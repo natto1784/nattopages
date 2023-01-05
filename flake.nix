@@ -14,25 +14,21 @@
             inherit system;
           };
 
-          inherit (pkgs.lib.sources) cleanSourceWith cleanSource;
-
-          filterCI = name: type:
-            !((type == "directory") && (baseNameOf name == ".woodpecker"));
-
-          cleanSrc = cleanSourceWith {
-            filter = filterCI;
-            src = cleanSource ./.;
-          };
+          inherit (pkgs.lib.sources) cleanSource;
 
           vars = pkgs.lib.mapAttrsToList (n: v: "export ${n}=${v}") {
             LOCALE_ARCHIVE = "${pkgs.glibcLocales}/lib/locale/locale-archive";
             LANG = "en_US.UTF-8";
           };
 
-          site = pkgs.haskellPackages.callCabal2nix "nattopages" ./src { };
+          site = pkgs.haskellPackages.developPackage {
+            name = "nattopages-site";
+            root = ./src;
+          };
+
           nattopages = pkgs.stdenv.mkDerivation {
             name = "nattopages";
-            src = cleanSrc;
+            src = cleanSource ./.;
             phases = "unpackPhase buildPhase";
             nativeBuildInputs = [ site ];
             buildPhase = (pkgs.lib.concatStringsSep "\n" vars) + "\n" +
@@ -51,9 +47,7 @@
               cabal-install
               haskell-language-server
               ghcid
-            ];
-            nativeBuildInputs = with pkgs; [
-              zlib
+              site
             ];
           };
           packages = {
