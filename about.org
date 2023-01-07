@@ -9,6 +9,8 @@ I like a lot of things, but the thing I like the most is sleeping.
 
 I dislike particularly nothing.
 
+#+HTML: <p>Here is my <a href="/documents/cv.html">CV</a>.
+
 * Socials
 - [[https://twitter.com/natto1784][Twitter]]
 - [[https://github.com/natto1784][GitHub]]

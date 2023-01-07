@@ -2,13 +2,11 @@
 title: Curriculum Vitae
 ---
 
-#+begin_export html
-<h1>Curriculum Vitae</h1> - Go <a href="/documents/cv.pdf">here</a> for the pdf <hr>
-#+end_export
+#+HTML: <h1>Curriculum Vitae</h1>Go <a href="/documents/cv.pdf">here</a> for the pdf.<hr>
 
 * _About_
 - Amneesh Singh
-- [[mailto:natto@weirdnatto.in][natto@weirdnatto.in]]
+- [[mailto:natto@weirdnatto.in][natto at weirdnatto dot in]]
 - [[https://weirdnatto.in][weirdnatto.in]]
 
 Hello, I am Amneesh Singh, I also go by =natto1784= online. I live in Delhi, India; and do random stuff. I am more of a "system-administrator" type of guy by nature, but when it comes to programming, I want to do it all low-level; unless it relates to my hobby.

@@ -2,13 +2,18 @@
 title: Contact
 ---
 
-- Email     :: [[mailto:natto@weirdnatto.in][natto at weirdnatto dot com]]
-            :: [[mailto:singh.amneesh1784@gmail.com][singh dot amneesh1784 at gmail dot com]]
-            :: [[mailto:natto1784@protonmail.com][natto1784 at protonmail dot com]]
-- IRC Nicks :: natto
-            :: natto17
-- LinkedIn  :: [[https://www.linkedin.com/in/natto1784/][natto1784]]
-- Discord   :: AlpaViraam#0735
+* Email
+- [[mailto:natto@weirdnatto.in][natto at weirdnatto dot com]]
+- [[mailto:singh.amneesh1784@gmail.com][singh dot amneesh1784 at gmail dot com]]
+- [[mailto:natto1784@protonmail.com][natto1784 at protonmail dot com]]
+
+* IRC Nicks
+Though, I'll probably be AFK
+- natto
+- natto17
+
+* Discord
+AlpaViraam#0735
 
 ** Public PGP
 #+begin_src
