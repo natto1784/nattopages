@@ -1,0 +1,41 @@
+\documentclass[a4paper, 11pt]{article}
+
+\usepackage[margin=0.5in]{geometry}
+\usepackage[colorlinks=true]{hyperref}
+\usepackage{longtable}
+\usepackage{booktabs}
+
+\usepackage{fontspec}
+\setmainfont[
+	Path = fonts/,
+	Extension = .ttf,
+	UprightFont = *-Regular,
+	ItalicFont = *-Italic,
+	BoldFont = *-Bold,
+	BoldItalicFont = *-BoldItalic
+]{Arvo}
+
+\setsansfont[
+	Path = fonts/,
+	Extension = .ttf,
+	UprightFont = *-Regular,
+	ItalicFont = *-Italic,
+	BoldFont = *-Bold,
+	BoldItalicFont = *-BoldItalic
+]{Lato}
+
+\usepackage{enumitem}
+\setlist[itemize]{leftmargin=*}
+\renewcommand{\labelitemi}{$$\sim$$}
+
+\usepackage{parskip}
+\setlength{\parindent}{0em}
+\setlength{\parskip}{0.5em}
+\setcounter{secnumdepth}{-1}
+
+\def\tightlist{}
+\usepackage{ulem}
+
+\begin{document}
+$body$
+\end{document}

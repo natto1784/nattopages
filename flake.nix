@@ -40,14 +40,23 @@
           };
         in
         rec {
-          devShell = with pkgs.haskellPackages; shellFor {
+          devShell = with pkgs; with haskellPackages; shellFor {
             packages = _: [ site ];
             withHoogle = true;
             buildInputs = [
               cabal-install
+              (texlive.combine {
+                inherit (texlive)
+                  scheme-small
+                  fontspec
+                  enumitem
+                  parskip
+                  hyperref
+                  standalone
+                  titlesec;
+              })
               haskell-language-server
               ghcid
-              site
             ];
           };
           packages = {

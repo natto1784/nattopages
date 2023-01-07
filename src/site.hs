@@ -6,14 +6,26 @@ import Data.Maybe (isJust)
 import Data.Text (Text)
 import qualified Data.Text as T
 import Hakyll
-import Text.Pandoc (WriterOptions (writerHighlightStyle, writerNumberSections, writerTOCDepth, writerTableOfContents, writerTemplate))
+import System.FilePath (replaceDirectory, replaceExtension, takeDirectory)
+import qualified System.Process as Process
+import Text.Pandoc
+  ( WriterOptions
+      ( writerHighlightStyle,
+        writerNumberSections,
+        writerTOCDepth,
+        writerTableOfContents,
+        writerTemplate
+      ),
+  )
+import qualified Text.Pandoc as Pandoc
 import Text.Pandoc.Templates (Template, compileTemplate)
 
 --------------------------------------------------------------------------------
 
 main :: IO ()
 main = hakyllWith config $ do
-  let individualPatterns = fromList ["about.org", "contact.org", "links.org"]
+  let individualPatterns = fromList ["about.org", "contact.org", "links.org", "documents/cv.org"]
+  let copyPatterns = fromList ["images/**", "fonts/*", "documents/*"]
 
   match "images/**" $ do
     route idRoute
@@ -27,12 +39,27 @@ main = hakyllWith config $ do
     route idRoute
     compile compressCssCompiler
 
+  match "*pdf" $ do
+    route idRoute
+
   match individualPatterns $ do
     route $ setExtension "html"
     compile $
       pandocCompiler
         >>= loadAndApplyTemplate "templates/default.html" defaultCtx
         >>= relativizeUrls
+
+  -- kindly stolen from https://github.com/jaspervdj/jaspervdj/blob/b2a9a34cd2195c6e216b922e152c42266dded99d/src/Main.hs#L163-L169
+  -- also see helper functions writeXetex and xelatex
+  match "documents/cv.org" $
+    version "pdf" $ do
+      route $ setExtension "pdf"
+      compile $
+        getResourceBody
+          >>= readPandoc
+          >>= writeXeTex
+          >>= loadAndApplyTemplate "templates/cv.tex" defaultCtx
+          >>= xelatex
 
   tags <- buildTags "posts/*" (fromCapture "archive/tags/*.html")
 
@@ -139,6 +166,39 @@ main = hakyllWith config $ do
         >>= loadAndApplyTemplate "templates/sitemap.xml" sitemapCtx
 
   match "templates/*" $ compile templateBodyCompiler
+  where
+    -- https://github.com/jaspervdj/jaspervdj/blob/b2a9a34cd2195c6e216b922e152c42266dded99d/src/Main.hs#L214-L218
+    writeXeTex :: Item Pandoc.Pandoc -> Compiler (Item String)
+    writeXeTex = traverse $ \pandoc ->
+      case Pandoc.runPure (Pandoc.writeLaTeX Pandoc.def pandoc) of
+        Left err -> fail $ show err
+        Right x -> return (T.unpack x)
+
+    -- https://github.com/jaspervdj/jaspervdj/blob/b2a9a34cd2195c6e216b922e152c42266dded99d/src/Main.hs#L280-L292
+    -- but even more hacky
+    xelatex :: Item String -> Compiler (Item TmpFile)
+    xelatex item = do
+      TmpFile texPath <- newTmpFile "xelatex.tex"
+      let tmpDir = takeDirectory texPath
+          pdfPath = replaceExtension texPath "pdf"
+
+      unsafeCompiler $ do
+        writeFile texPath $ itemBody item
+        let x = itemBody item
+        _ <-
+          Process.system $
+            unwords
+              [ "xelatex",
+                "-halt-on-error",
+                "-output-directory",
+                tmpDir,
+                texPath,
+                ">/dev/null",
+                "2>&1"
+              ]
+        return ()
+
+      makeItem $ TmpFile pdfPath
 
 rssFeedConfiguration :: FeedConfiguration
 rssFeedConfiguration =
@@ -189,7 +249,7 @@ defaultCtx =
     domainCtx :: Context String
     domainCtx = constField "domain" domain
     subdomains :: [Item String]
-    subdomains = map mkItem ["git", "nomad", "consul", "vault", "radio", "f", "ci"]
+    subdomains = map mkItem ["git", "nomad", "consul", "vault", "radio", "f"]
       where
         mkItem :: a -> Item a
         mkItem a = Item {itemIdentifier = "subdomain", itemBody = a}
