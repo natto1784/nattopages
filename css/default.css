@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Arvo';
-    font-style: normal;
+  font-style: normal;
   src: url('../fonts/Arvo-Regular.woff2') format('woff2');
 }
 
@@ -50,7 +50,7 @@
 
 @font-face {
   font-family: 'Quantico';
-    font-style: normal;
+  font-style: normal;
   src: url('../fonts/Quantico-Regular.woff2') format('woff2');
 }
 
@@ -75,13 +75,14 @@
 
 @font-family {
   font-family: 'Monoid';
+  font-style: normal;
   src: url('../fonts/Monoid-Regular.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'Monoid';
   font-weight: bold;
-  src: url('../fonts/Monoid-Bold.woff2') format('woff2'),
+  src: url('../fonts/Monoid-Bold.woff2') format('woff2');
 }
 
 @font-family {
@@ -230,10 +231,6 @@ article .post-header {
 .logo {
   text-align: center;
   margin: 1rem auto 3rem;
-}
-
-.logo a:hover {
-  transform: rotate(180deg);
 }
 
 .logo a {

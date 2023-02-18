@@ -24,7 +24,7 @@ Hello, I am Amneesh Singh, I also go by =natto1784= online. I live in Delhi, Ind
 * _Skills_
 ** Programming Languages
 - *Experienced*: C/C++, Rust, Python, Javascript, CSS, HTML
-- *Familiar*: Haskell, PHP, Java, Lua, x86-Assembly, ARM-Assembly
+- *Familiar*: Lisp, Haskell, PHP, Java, Lua, Go, x86-Assembly, ARM-Assembly
 
 ** Tools
 - *Experienced*: GNU/Linux, POSIX Shells, Git, Nix/NixOS, GNU Make, ffmpeg, OpenSSH, vi/vim, GNU Emacs, Docker, Hashicorp Nomad, Hashicorp Vault, nginx, Concourse CI
