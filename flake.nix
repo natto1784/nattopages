@@ -58,6 +58,8 @@
               haskell-language-server
               ghcid
             ];
+            SSHTARGET = "bat@weirdnatto.in:/var/lib/site/";
+            SSHTARGETPORT = 22001;
           };
           packages = {
             inherit nattopages site;

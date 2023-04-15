@@ -19,6 +19,8 @@ import Text.Pandoc
   )
 import qualified Text.Pandoc as Pandoc
 import Text.Pandoc.Templates (Template, compileTemplate)
+import System.Environment (getEnv)
+import System.IO.Unsafe (unsafePerformIO)
 
 --------------------------------------------------------------------------------
 
@@ -213,12 +215,14 @@ rssFeedConfiguration =
 config :: Configuration
 config =
   defaultConfiguration
-    { deployCommand =
-        "rsync --checksum -ave 'ssh -p 22001' \
-        \_site/* \
-        \root@weirdnatto.in:/var/lib/site/",
+    { deployCommand = "rsync --checksum -ave 'ssh -p" ++ sshTargetPort ++"' _site/* " ++ sshTarget,
       previewPort = 3333
     }
+  where
+    {-# NOINLINE sshTarget#-}
+    sshTarget = unsafePerformIO $ getEnv "SSHTARGET"
+    {-# NOINLINE sshTargetPort#-}
+    sshTargetPort = unsafePerformIO $ getEnv "SSHTARGETPORT"
 
 postCtx :: Tags -> Context String
 postCtx tags =
