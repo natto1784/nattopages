@@ -92,37 +92,24 @@
 }
 
 :root {
-  --yellow: #b58900;
-  --orange: #cb4b16;
-  --red: #dc322f;
+  --yellow: #fcdb03;
+  --orange: #fc9403;
+  --red: #ff2600;
   --magenta: #d33682;
   --violet: #6c71c4;
-  --blue: #268bd2;
+  --blue: #3e8ef0;
   --cyan: #2aa198;
-  --green: #859900;
-  --fg0: #93a1a1;
-  --fg1: #839496;
-  --fg2: #657b83;
-  --fg3: #586e75;
-  --fg4: #073642;
-  --fg5: #002b36;
-  --bg0: #fdf6e3 ;
-  --bg1: #eee8d5;
-  --dark: #002b36;
-  --light: #fdf6e3; 
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg0: #073642;
-    --bg1: #002b36;
-    --fg5: #fdf6e3 ;
-    --fg4: #eee8d5;
-    --fg3: #93a1a1;
-    --fg2: #839496;
-    --fg1: #657b83;
-    --fg0: #586e75;
-  } 
+  --green: #327841;
+  --fg0: #9c9c9c;
+  --fg1: #828181;
+  --fg2: #5e5e5e;
+  --fg3: #403f3f;
+  --fg4: #262626;
+  --fg5: #000000;
+  --bg0: #ffffff ;
+  --bg1: #e6e6e6;
+  --dark: #000000;
+  --light: #ffffff; 
 }
 
 html {
@@ -188,7 +175,7 @@ nav a {
 
 nav a:hover {
   background: var(--cyan);
-  color: var(--dark);
+  color: var(--bg0);
 }
 
 footer {
@@ -228,16 +215,16 @@ article .post-header {
   color: var(--fg0);
 }
 
-.logo {
+.nattopages {
   text-align: center;
   margin: 1rem auto 3rem;
 }
 
-.logo a {
+.nattopages a {
   font-weight: bold;
   font-family: "Monoid";
   font-size: 3rem;
-  color: var(--green);
+  color: var(--fg3);
   text-decoration: none;
 }
 
@@ -270,8 +257,8 @@ pre {
 .toc {
   background: var(--bg1);
   border-radius: 1rem;
-  float: right;
-  max-width: 40%;
+  float: none;
+  width: max-content;
 }
 
 img, video {
