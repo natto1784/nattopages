@@ -109,31 +109,6 @@ main = hakyllWith config $ do
         >>= loadAndApplyTemplate "templates/default.html" archiveCtx
         >>= relativizeUrls
 
-  match "dailies/*org" $ do
-    route $ setExtension "html"
-    compile $ do
-      pandocCompiler
-        >>= saveSnapshot "dailiescontent"
-        >>= loadAndApplyTemplate "templates/post.html" dailiesCtx
-        >>= loadAndApplyTemplate "templates/default.html" dailiesCtx
-        >>= relativizeUrls
-
-  create ["dailies.html"] $ do
-    route idRoute
-    compile $ do
-      dailyToday <- fmap (take 1) . recentFirst =<< loadAllSnapshots "dailies/*" "dailiescontent"
-      dailies <- recentFirst =<< loadAll "dailies/*"
-      let dailiesCtx' =
-            listField "today" dailiesCtx (return dailyToday)
-              <> listField "posts" dailiesCtx (return dailies)
-              <> constField "title" "Dailies"
-              <> defaultCtx
-
-      makeItem ""
-        >>= loadAndApplyTemplate "templates/dailies.html" dailiesCtx'
-        >>= loadAndApplyTemplate "templates/default.html" dailiesCtx'
-        >>= relativizeUrls
-
   match "index.html" $ do
     route idRoute
     compile $ do
@@ -231,11 +206,6 @@ postCtx tags =
     <> dateField "date" "%B %e, %Y"
     <> dateField "altdate" "%Y-%m-%d"
     <> teaserField "teaser" "content"
-    <> defaultCtx
-
-dailiesCtx :: Context String
-dailiesCtx =
-  dateField "date" "%B %e, %Y"
     <> defaultCtx
 
 defaultCtx :: Context String
