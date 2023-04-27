@@ -92,30 +92,69 @@
 }
 
 :root {
-  --yellow: #fcdb03;
-  --orange: #fc9403;
-  --red: #ff2600;
-  --magenta: #d33682;
-  --violet: #6c71c4;
-  --blue: #3e8ef0;
-  --cyan: #2aa198;
-  --green: #327841;
-  --fg0: #9c9c9c;
-  --fg1: #828181;
-  --fg2: #5e5e5e;
-  --fg3: #403f3f;
-  --fg4: #262626;
-  --fg5: #000000;
-  --bg0: #ffffff ;
-  --bg1: #e6e6e6;
-  --dark: #000000;
-  --light: #ffffff; 
+  --rosewater: #dc8a78;
+  --flamingo: #dd7878;
+  --pink: #ea76cb;
+  --mauve: #8839ef;
+  --red: #d20f39;
+  --maroon: #e64553;
+  --peach: #fe640b;
+  --yellow: #df8e1d;
+  --green: #40a02b;
+  --teal: #179299;
+  --sky: #04a5e5;
+  --sapphire: #209fb5;
+  --blue: #1e66f5;
+  --lavender: #7287fd;
+  --text: #4c4f69;
+  --subtext1: #5c5f77;
+  --subtext0: #6c6f85;
+  --overlay2: #7c7f93;
+  --overlay1: #8c8fa1;
+  --overlay0: #9ca0b0;
+  --surface2: #acb0be;
+  --surface1: #bcc0cc;
+  --surface0: #ccd0da;
+  --crust: #dce0e8;
+  --mantle: #e6e9ef;
+  --base: #eff1f5;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --rosewater: #f5e0dc;
+    --flamingo: #f2cdcd;
+    --pink: #f5c2e7;
+    --mauve: #cba6f7;
+    --red: #f38ba8;
+    --maroon: #eba0ac;
+    --peach: #fab387;
+    --yellow: #f9e2af;
+    --green: #a6e3a1;
+    --teal: #94e2d5;
+    --sky: #89dceb;
+    --sapphire: #74c7ec;
+    --sky: #89b4fa;
+    --lavender: #b4befe;
+    --text: #cdd6f4;
+    --subtext1: #bac2de;
+    --subtext0: #a6adc8;
+    --overlay2: #9399b2;
+    --overlay1: #7f849c;
+    --overlay0: #6c7086;
+    --surface2: #585b70;
+    --surface1: #45475a;
+    --surface0: #313244;
+    --base: #1e1e2e;
+    --mantle: #181825;
+    --crust: #11111b;
+  }
 }
 
 html {
   font-size: 62.5%;
-  background-color: var(--bg0);
-  color: var(--fg2);
+  background-color: var(--base);
+  color: var(--subtext0);
 }
 
 body {
@@ -125,7 +164,7 @@ body {
 }
 
 h1, h2, h3 {
-  color: var(--fg3);
+  color: var(--overlay2);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -134,17 +173,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 header {
-  border-bottom: 0.2rem solid var(--magenta);
+  border-bottom: 0.2rem solid var(--pink);
   margin: 4.2rem 0;
 }
 
 main a, footer a {
-  color: var(--blue);
+  color: var(--sky);
 }
 
 main a:hover, footer a:hover{
-  color: var(--light);
-  background: var(--blue);
+  color: var(--base);
+  background: var(--sky);
 }
 
 .subdomains li a:hover {
@@ -171,22 +210,22 @@ nav {
 nav a {
   font-size: 2rem;
   font-weight: bold;
-  color: var(--cyan);
+  color: var(--sapphire);
   text-transform: uppercase;
   padding: 0.5rem;
 }
 
 nav a:hover {
-  background: var(--cyan);
-  color: var(--bg0);
+  background: var(--sapphire);
+  color: var(--base);
 }
 
 footer {
   margin-top: 3rem;
   padding: 1.2rem 0;
-  border-top: 0.2rem solid var(--magenta);
+  border-top: 0.2rem solid var(--pink);
   font-size: 1.2rem;
-  color: var(--fg0);
+  color: var(--text);
 }
 
 h1 {
@@ -199,13 +238,13 @@ h2 {
 
 .post-title {
   text-align: center;
-  color: var(--fg5) !important;
+  color: var(--subtext1);
 }
 
 article .post-header {
   font-size: 1.4rem;
   font-style: italic;
-  color: var(--fg0);
+  color: var(--text);
 }
 
 .nattopages {
@@ -217,7 +256,7 @@ article .post-header {
   font-weight: bold;
   font-family: "Monoid";
   font-size: 3rem;
-  color: var(--fg3);
+  color: var(--overlay2);
   text-decoration: none;
 }
 
@@ -235,20 +274,20 @@ article > section {
 }
 
 .verbatim {
-  background: var(--bg1);
+  background: var(--mantle);
 }
 
 pre {
   font-family: 'Monoid', monospace;
   padding: 2rem;
   border-radius: 1rem;
-  border-left: 0.5rem solid var(--cyan);
-  background: var(--bg1);
+  border-left: 0.5rem solid var(--sapphire);
+  background: var(--mantle);
   overflow-x: auto;
 }
 
 .toc {
-  background: var(--bg1);
+  background: var(--mantle);
   border-radius: 1rem;
   float: none;
   width: max-content;

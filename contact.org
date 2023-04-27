@@ -3,12 +3,13 @@ title: Contact
 ---
 
 * Email
+Fastest way to get to me
 - [[mailto:natto@weirdnatto.in][natto at weirdnatto dot com]]
 - [[mailto:singh.amneesh1784@gmail.com][singh dot amneesh1784 at gmail dot com]]
 - [[mailto:natto1784@protonmail.com][natto1784 at protonmail dot com]]
 
 * IRC Nicks
-Though, I'll probably be AFK
+I'll probably be AFK
 - natto
 - natto17
 
