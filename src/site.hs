@@ -112,10 +112,7 @@ main = hakyllWith config $ do
   match "index.html" $ do
     route idRoute
     compile $ do
-      posts <- fmap (take 10) . recentFirst =<< loadAllSnapshots "posts/*" "content"
-      let indexCtx =
-            listField "posts" (postCtx tags) (return posts)
-              <> defaultCtx
+      let indexCtx = defaultCtx
 
       getResourceBody
         >>= applyAsTemplate indexCtx

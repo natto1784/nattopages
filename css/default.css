@@ -161,7 +161,10 @@ a:hover {
 }
 
 nav {
+  display: flex;
+  flex-direction: row;
   text-align: center;
+  justify-content: center;
   margin: 0 auto 3rem;
 }
 
@@ -192,16 +195,6 @@ h1 {
 
 h2 {
   font-size: 2rem;
-}
-
-.post-preview-item {
- list-style-type: none;
- padding: 2rem;
- border: 0.2rem ridge var(--fg5);
-}
-
-.post-preview-item:not(:last-child) {
-  margin-bottom: 3rem;
 }
 
 .post-title {
@@ -286,13 +279,20 @@ img, video {
     margin: 0;
     padding: 0 5%;
   }
+
   footer {
     text-align: center;
   }
+ 
+  nav {
+    flex-direction: column;
+  }
+ 
   nav a {
     display: block;
     line-height: 1.6;
   }
+ 
   .toc {
     padding: 1rem;
   }
@@ -304,15 +304,24 @@ img, video {
     margin: 0;
     padding: 0 5%;
   }
+
   footer {
     text-align: center;
   }
+
   nav a {
     display: inline;
     margin: 0 0.6rem;
   }
+
   .toc {
     padding: 1rem;
+  }
+}
+
+@media (max-width: 639px) {
+  nav {
+    flex-direction: column;
   }
 }
 
@@ -322,13 +331,16 @@ img, video {
     margin: 0 auto;
     padding: 0;
   }
+
   nav a {
     margin: 0 0 0 1.2rem;
     display: inline;
   }
+
   footer {
     text-align: right;
   }
+
   .toc {
     padding: 2rem;
   }
