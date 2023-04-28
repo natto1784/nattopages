@@ -21,6 +21,10 @@ Hello, I am Amneesh Singh, I also go by =natto1784= online. I live in Delhi, Ind
 - *NOC: Foundations of Cryptography, IIIT Bangalore, NPTEL - May 2022*
 - *NOC: Computer Architecture, IIT Delhi, NPTEL - May 2022*
 
+* Projects
+- *Home Lab*: I have an automated home VPN running multiple utility containers with most services reverse proxied via my VPS. Huge fan of [[https://en.wikipedia.org/wiki/Nix_(package_manager)][Nix]] package management.
+- *tricc*: A very WIP toy compiler for my toy language.
+
 * _Skills_
 ** Programming Languages
 - *Experienced*: C/C++, Rust, Python, Javascript, CSS, HTML
