@@ -57,6 +57,7 @@
               })
               haskell-language-server
               ghcid
+              site
             ];
             SSHTARGET = "bat@weirdnatto.in:/var/lib/site/";
             SSHTARGETPORT = 22001;
