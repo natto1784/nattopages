@@ -1,4 +1,4 @@
-\documentclass[a4paper, 11pt]{article}
+\documentclass[a4paper, 10pt]{article}
 
 \usepackage[margin=0.5in]{geometry}
 \usepackage[colorlinks=true]{hyperref}
@@ -26,7 +26,6 @@
 
 \usepackage{enumitem}
 \setlist[itemize]{leftmargin=*}
-\renewcommand{\labelitemi}{$$\sim$$}
 
 \usepackage{parskip}
 \setlength{\parindent}{0em}
@@ -35,6 +34,15 @@
 
 \def\tightlist{}
 \usepackage{ulem}
+
+\usepackage{titlesec}
+\titleformat{\section}[hang]{\normalfont\Large}{\thesection}{1em}{}
+\titleformat{\subsection}[hang]{\normalfont\normalsize\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}[hang]{\normalfont\normalsize\itshape}{\thesubsubsection}{1em}{}
+
+\titlespacing\section{0pt}{12pt plus 4pt minus 2pt}{6pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{8pt plus 4pt minus 2pt}{4pt plus 2pt minus 2pt}
+\titlespacing\subsubsection{0pt}{6pt plus 4pt minus 2pt}{4pt plus 2pt minus 2pt}
 
 \begin{document}
 $body$
