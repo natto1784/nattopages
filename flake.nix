@@ -60,7 +60,7 @@
               site
             ];
             SSHTARGET = "bat@weirdnatto.in:/var/lib/site/";
-            SSHTARGETPORT = 22001;
+            SSHTARGETPORT = 22002;
           };
           packages = {
             inherit nattopages site;
