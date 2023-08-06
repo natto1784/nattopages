@@ -41,10 +41,10 @@ Random links I find useful
 - [[https://github.com/NixOS/nixpkgs][Nixpkgs]]: Nix Packages collection.
 - [[https://github.com/concourse/concourse][Concourse CI]]: A continuous thing-doer.
 - [[https://github.com/emacs-lsp/lsp-mode][lsp-mode]]: Emacs library for Language Server Protocol.
-- [[https://gitlab.com/qemu-project/qemu][QEMU]]: The famous virtualization API library.
-- [[https://gitlab.com/libvirt/libvirt/][libvirt]]: The famous virtualization API library.
 - [[https://github.com/CompVis/stable-diffusion][Stable Diffusion]]: Text2Image and Image2Image diffusion scripts for the SD models.
+- [[https://gitlab.com/simple-nixos-mailserver/nixos-mailserver][Simple Nixos Mailserver]]: True to its name.
 - [[https://github.com/bakape/captchouli][Captchouli]]: Booru-backed procedurally-generated anime image captcha library and server 
+- [[https://github.com/rui314/chibicc][chibicc]]: A [[https://jisho.org/word/%E7%A6%BF%E3%81%B3][chibi]] C compiler by Rui Ueyama.
 
 ** Torrent Trackers
 - I won't post any more private trackers even if you want me to.
@@ -53,5 +53,13 @@ Random links I find useful
 - [[https://nyaa.si][Nyaa]]: The anime public tracker, also has JP music, games, manga, books and software. Mirror for blocked countries: [[https://nyaa.iss.one]].
 - [[https://en.metal-tracker.com][METAL-TRACKER.COM]]: Public metal music tracker.
 
+** Music
+- [[https://doujinstyle.com/][DOUJINSTYLE.COM]]: Everything doujin, convenient way to get albums although LOG files may not be 100% correct.
+
 ** Misc
 - [[https://www.proxysite.com/][ProxySite]]: I use it to download large GitHub assets.
+
+* Other Blogs
+- [[https://justinas.org/nixos-in-the-cloud-step-by-step-part-2][NixOS in the Cloud, step-by-step: part 2]] by Justinas Stankevičius (also see https://github.com/justinas/nixos-cloud) 
+- [[https://snehit.dev/posts/body-trade-in-mainline-streams/][Body Trade in Mainline Streams?]] by Snehit Shah (flyingcakes)
+- [[https://blog.konno.tk/#30][most depressing midi player]] by junko (Possibly browsing https://github.com/Henrixounez/v-midi/)
