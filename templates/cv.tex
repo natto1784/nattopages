@@ -36,14 +36,14 @@
 \usepackage{ulem}
 
 \usepackage{titlesec}
-\titleformat{\section}[hang]{\normalfont\Large}{\thesection}{1em}{}
+\titleformat{\section}[hang]{\normalfont\Large}{\thesection}{1em}{}[{\titlerule[0.8pt]}]
 \titleformat{\subsection}[hang]{\normalfont\normalsize\bfseries}{\thesubsection}{1em}{}
 \titleformat{\subsubsection}[hang]{\normalfont\normalsize\itshape}{\thesubsubsection}{1em}{}
 
 \titlespacing\section{0pt}{12pt plus 4pt minus 2pt}{6pt plus 2pt minus 2pt}
 \titlespacing\subsection{0pt}{8pt plus 4pt minus 2pt}{4pt plus 2pt minus 2pt}
 \titlespacing\subsubsection{0pt}{6pt plus 4pt minus 2pt}{4pt plus 2pt minus 2pt}
-
+ \setlength{\LTleft}{0pt}
 \begin{document}
 $body$
 \end{document}

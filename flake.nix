@@ -2,7 +2,7 @@
   description = "My personal website";
 
   inputs = {
-    nixpkgs.url = github:nixos/nixpkgs/release-22.05;
+    nixpkgs.url = github:nixos/nixpkgs/nixpkgs-unstable;
     utils.url = github:numtide/flake-utils;
   };
 

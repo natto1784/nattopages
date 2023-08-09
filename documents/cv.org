@@ -6,7 +6,7 @@ title: Curriculum Vitae
 
 * Amneesh Singh
 | Email    | : | [[mailto:natto@weirdnatto.in][natto at weirdnatto dot in]] |
-| Homepage | : | [[https://weirdnatto.in][weirdnatto.in]]            |
+| Homepage | : | [[https://weirdnatto.in][weirdnatto.in]]              |
 
 Hello, I am Amneesh Singh, I also go by =natto1784= online. I live in Delhi, India; and do random stuff. I am more of a "system-administrator" type of guy, but when it comes to programming, I want to do it all low-level; unless it relates to my hobby.
 
@@ -33,16 +33,16 @@ I participated as a contributor in [[https://summerofcode.withgoogle.com/archive
 
 * Skills
 ** Programming Languages
-*** _Experienced_
+*** Experienced
 C/C++, Rust, Python, Javascript
-*** _Have used before_
+*** Have used before
 Lisp, Haskell, PHP, Java, Lua, Go, x86-Assembly, ARM-Assembly
 
 ** Tools
-*** _Experienced_
-GNU/Linux, POSIX Shells, TeX, Git, Nix/NixOS, GNU Make, ffmpeg, OpenSSH, vi/vim, GNU Emacs, Docker, Hashicorp Nomad, Hashicorp Vault, nginx, Concourse CI, NodeJS, ReactJS
-*** _Have used before_
-Pandoc, GitHub Actions, ZFS, Oracle Cloud Infrastructure, Terraform, Hashicorp Consul, Portage, yarn/npm, Rocket
+*** Experienced
+GNU/Linux, POSIX Shells, TeX, Git, Nix/NixOS, GNU Make, ffmpeg, OpenSSH, vi/vim, GNU Emacs, Docker, Nomad, Vault, nginx, ConcourseCI, NodeJS, ReactJS
+*** Have used before
+Pandoc, GitHub Actions, ZFS, OCI, Terraform, Hashicorp Consul, Portage, yarn/npm, Rocket
 
 ** Soft Skills
 - *Languages*: Hindi, Punjabi, English, Japanese (can read a little, cannot converse)
