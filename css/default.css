@@ -134,7 +134,7 @@
     --teal: #94e2d5;
     --sky: #89dceb;
     --sapphire: #74c7ec;
-    --sky: #89b4fa;
+    --blue: #89b4fa;
     --lavender: #b4befe;
     --text: #cdd6f4;
     --subtext1: #bac2de;
@@ -181,7 +181,9 @@ main a, footer a {
   color: var(--sky);
 }
 
-main a:hover, footer a:hover{
+main a:not(.footnote-ref):hover,
+main .footnote-ref *:hover,
+footer a:hover{
   color: var(--base);
   background: var(--sky);
 }
@@ -195,7 +197,7 @@ a {
   font-family: "Quantico", monospace;
 }
 
-a:hover {
+a:hover, a *:hover {
   transition-duration: 0.1s;
 }
 
