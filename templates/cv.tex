@@ -1,31 +1,13 @@
-\documentclass[a4paper, 10pt]{article}
+\documentclass[a4paper,11pt]{article}
+
 
 \usepackage[margin=0.5in]{geometry}
 \usepackage[colorlinks=true]{hyperref}
 \usepackage{longtable}
 \usepackage{booktabs}
 
-\usepackage{fontspec}
-\setmainfont[
-	Path = fonts/,
-	Extension = .ttf,
-	UprightFont = *-Regular,
-	ItalicFont = *-Italic,
-	BoldFont = *-Bold,
-	BoldItalicFont = *-BoldItalic
-]{Arvo}
-
-\setsansfont[
-	Path = fonts/,
-	Extension = .ttf,
-	UprightFont = *-Regular,
-	ItalicFont = *-Italic,
-	BoldFont = *-Bold,
-	BoldItalicFont = *-BoldItalic
-]{Lato}
-
 \usepackage{enumitem}
-\setlist[itemize]{leftmargin=*}
+\setlist[itemize]{leftmargin=*, partopsep=-4pt }
 
 \usepackage{parskip}
 \setlength{\parindent}{0em}
@@ -34,16 +16,28 @@
 
 \def\tightlist{}
 \usepackage{ulem}
+\normalem 
 
 \usepackage{titlesec}
-\titleformat{\section}[hang]{\normalfont\Large}{\thesection}{1em}{}[{\titlerule[0.8pt]}]
-\titleformat{\subsection}[hang]{\normalfont\normalsize\bfseries}{\thesubsection}{1em}{}
-\titleformat{\subsubsection}[hang]{\normalfont\normalsize\itshape}{\thesubsubsection}{1em}{}
+\titleformat{\section}{
+  \vspace{-5pt}\scshape\raggedright\large
+}{}{0em}{}[\vspace{-5pt}]
 
-\titlespacing\section{0pt}{12pt plus 4pt minus 2pt}{6pt plus 2pt minus 2pt}
-\titlespacing\subsection{0pt}{8pt plus 4pt minus 2pt}{4pt plus 2pt minus 2pt}
-\titlespacing\subsubsection{0pt}{6pt plus 4pt minus 2pt}{4pt plus 2pt minus 2pt}
- \setlength{\LTleft}{0pt}
+\titleformat{\subsection}{
+  \vspace{-2pt}\raggedright\normalsize\bfseries
+}{}{0em}{}[\vspace{-5pt}]
+
+\titlespacing{\subsection}{0pt}{8pt}{5pt}
+
+\let\OldRule\rule
+\renewcommand{\rule}[2]{\OldRule{\linewidth}{#2}}
+
+\setlength{\LTleft}{0pt}
+\setlength{\LTpre}{3pt}
+\setlength{\LTpost}{0pt}
+
+\usepackage{relsize}
+
 \begin{document}
 $body$
 \end{document}

@@ -2,48 +2,56 @@
 title: Curriculum Vitae
 ---
 
-#+HTML: <h1>Curriculum Vitae</h1>Go <a href="/documents/cv.pdf">here</a> for the pdf.<hr>
+#+MACRO: SMALL \mdseries\smaller @@html:<small>@@  /$1/ @@html:</small>@@
+#+MACRO: RIGHT \hfill @@html:<span style="float:right">@@ /$1/  @@html:</span>@@
+#+MACRO: TRULE \titlerule @@html:<hr />@@
 
+#+HTML: <h1>Curriculum Vitae</h1>Go <a href="/documents/cv.pdf">here</a> for the pdf.<hr>
 * Amneesh Singh
+{{{TRULE}}}
 | Email    | : | [[mailto:natto@weirdnatto.in][natto at weirdnatto dot in]] |
 | Homepage | : | [[https://weirdnatto.in][weirdnatto.in]]              |
 
 Hello, I am Amneesh Singh, I also go by =natto1784= online. I live in Delhi, India; and do random stuff. I am more of a "system-administrator" type of guy, but when it comes to programming, I want to do it all low-level; unless it relates to my hobby.
 
 * Work Experience
-** Cypherock - Software Engineer Intern
-*** (June 2023 -)
-- Working with C/C++ libraries involving cryptographic primitives.
-- Working on the React-Typescript frontend. 
+{{{TRULE}}}
+** Cypherock - Software Engineer Intern {{{RIGHT(June 2023 -)}}}
+C, Sockets, Cryptography, Protocol buffers, Typescript, React
 
 * Student Programs, Scholarships, Examinations
-- *Google Summer of Code 2022*
+{{{TRULE}}}
+- *Google Summer of Code 2022* | {{{SMALL(C - GLib - Git)}}}
 I participated as a contributor in [[https://summerofcode.withgoogle.com/archive/2022][Google Summer of Code 2022]] at [[https://libvirt.org][libvirt]] and got paid a stipend for it by Google. The project involved adding the new introspectable statistics provided by QEMU and adding them under the libvirt statistics API.
-- NOC: Foundations of Cryptography, IIIT Bangalore, NPTEL - *May 2022*
-- NOC: Computer Architecture, IIT Delhi, NPTEL - *May 2022*
+- NOC: Foundations of Cryptography, IIIT Bangalore, NPTEL {{{RIGHT(May 2022)}}}
+- NOC: Computer Architecture, IIT Delhi, NPTEL - {{{RIGHT(May 2022)}}}
 
 * Education
-- B.Tech, Information Technology, Maharaja Agrasen Institute of Technology *(2021 - 2025), 8.6GPA*
+{{{TRULE}}}
+** B.Tech, Information Technology
+Maharaja Agrasen Institute of Technology {{{RIGHT((2021 - 2025)\, 8.6GPA)}}}
 
 * Projects
-** Home Lab
+{{{TRULE}}}
+** Home Lab | {{{SMALL(linux - NixOS - WireGuard - OCI - Hashicorp)}}}
  I have an automated home VPN running multiple utility containers with most services reverse proxied via my VPS. Huge fan of [[https://en.wikipedia.org/wiki/Nix_(package_manager)][Nix]] package management.
-** tricc
- A very WIP toy compiler for my toy language.
+** tricc | {{{SMALL(Rust - Compiler Design)}}}
+ A WIP toy compiler for my toy language.
+** matar (no public code) | {{{SMALL(C++ - Meson - ARM/THUMB architecture)}}}
+ A very early stage WIP Nintendo Game Boy Advance emulator.
 
 * Skills
+{{{TRULE}}}
 ** Programming Languages
-*** Experienced
-C/C++, Rust, Python, Javascript
-*** Have used before
-Lisp, Haskell, PHP, Java, Lua, Go, x86-Assembly, ARM-Assembly
+| Proficient  | : | C/C++, Rust, Python, Javascript                               |
+| Experienced | : | Lisp, Haskell, PHP, Java, Lua, Go, x86-Assembly, ARM-Assembly |
 
 ** Tools
-*** Experienced
-GNU/Linux, POSIX Shells, TeX, Git, Nix/NixOS, GNU Make, ffmpeg, OpenSSH, vi/vim, GNU Emacs, Docker, Nomad, Vault, nginx, ConcourseCI, NodeJS, ReactJS
-*** Have used before
-Pandoc, GitHub Actions, ZFS, OCI, Terraform, Hashicorp Consul, Portage, yarn/npm, Rocket
+| Proficient  | : | GNU/Linux, POSIX Shells, TeX, Git, Nix/NixOS, GNU Make, ffmpeg, OpenSSH, vi/vim,         |
+|             |   | GNU Emacs, Docker, Nomad, Vault, nginx, ConcourseCI, NodeJS, ReactJS                     |
+| Experienced | : | Pandoc, GitHub Actions, ZFS, OCI, Terraform, Consul, Portage, yarn/npm, Rocket |
 
 ** Soft Skills
-- *Languages*: Hindi, Punjabi, English, Japanese (can read a little, cannot converse)
-- *Hobbies*: Home server/lab, Writing, Philosophy, Music theory, Geopolitics
+| Languages | : | Hindi, Punjabi, English, Japanese (can read a little, cannot converse) |
+| Hobbies   | : | Home server/lab, Writing, Philosophy, Music theory, Geopolitics        |
+
