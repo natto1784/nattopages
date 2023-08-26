@@ -1,0 +1,7 @@
+packages: .
+
+source-repository-package
+    type: git
+    location: https://github.com/natto1784/pandoc.git
+    tag: b30124ce3e835cdb7b35fafd88c86d0841dcfaa9
+ --   sha256: 06y4xy333jhdcd59dgwasv49yr95869q3p74a441yls5vb86v28c

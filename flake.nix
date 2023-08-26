@@ -2,49 +2,38 @@
   description = "My personal website";
 
   inputs = {
-    nixpkgs.url = github:nixos/nixpkgs/nixpkgs-unstable;
+    nixpkgs.follows = "hnix/nixpkgs";
+    hnix.url = github:input-output-hk/haskell.nix;
     utils.url = github:numtide/flake-utils;
   };
 
-  outputs = { self, nixpkgs, utils }:
+  outputs = { self, nixpkgs, utils, hnix }:
     utils.lib.eachDefaultSystem
       (system:
         let
+          overlays = [
+            hnix.overlay
+          ];
+
           pkgs = import nixpkgs {
-            inherit system;
+            inherit system overlays;
+            inherit (hnix) config;
           };
 
-          inherit (pkgs.lib.sources) cleanSource;
-
-          vars = pkgs.lib.mapAttrsToList (n: v: "export ${n}=${v}") {
-            LOCALE_ARCHIVE = "${pkgs.glibcLocales}/lib/locale/locale-archive";
-            LANG = "en_US.UTF-8";
+          nattopages = pkgs.haskell-nix.hix.project {
+            src = ./src;
+            compiler-nix-name = "ghc928";
           };
 
-          site = pkgs.haskellPackages.developPackage {
-            name = "nattopages-site";
-            root = ./src;
-          };
-
-          nattopages = pkgs.stdenv.mkDerivation {
-            name = "nattopages";
-            src = cleanSource ./.;
-            phases = "unpackPhase buildPhase";
-            nativeBuildInputs = [ site ];
-            buildPhase = (pkgs.lib.concatStringsSep "\n" vars) + "\n" +
-              ''
-                site build
-                mkdir -p $out
-                cp -r _site/* $out
-              '';
-          };
+          flake = nattopages.flake { };
         in
-        rec {
-          devShell = with pkgs; with haskellPackages; shellFor {
-            packages = _: [ site ];
-            withHoogle = true;
-            buildInputs = [
+        flake // rec {
+          packages.default = flake.packages."nattopages:exe:site";
+          devShells.default = with pkgs; mkShell {
+            buildInputs = with pkgs; [
               cabal-install
+              haskellPackages.fourmolu
+
               (texlive.combine {
                 inherit (texlive)
                   scheme-small
@@ -53,19 +42,14 @@
                   parskip
                   hyperref
                   standalone
+                  relsize
                   titlesec;
               })
-              haskell-language-server
-              ghcid
-              site
+
+              packages.default
             ];
             SSHTARGET = "bat@weirdnatto.in:/var/lib/site/";
             SSHTARGETPORT = 22002;
           };
-          packages = {
-            inherit nattopages site;
-          };
-          defaultPackage = packages.nattopages;
-        }
-      );
+        });
 }
