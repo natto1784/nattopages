@@ -8,6 +8,7 @@ title: Curriculum Vitae
 
 #+HTML: <h1>Curriculum Vitae</h1>Go <a href="/documents/cv.pdf">here</a> for the pdf.<hr>
 * Amneesh Singh
+
 {{{TRULE}}}
 | Email    | : | [[mailto:natto@weirdnatto.in][natto at weirdnatto dot in]] |
 | Homepage | : | [[https://weirdnatto.in][weirdnatto.in]]              |
@@ -43,15 +44,13 @@ Maharaja Agrasen Institute of Technology {{{RIGHT((2021 - 2025)\, 8.6GPA)}}}
 * Skills
 {{{TRULE}}}
 ** Programming Languages
-| Proficient  | : | C/C++, Rust, Python, Javascript                               |
-| Experienced | : | Lisp, Haskell, PHP, Java, Lua, Go, x86-Assembly, ARM-Assembly |
+- *Proficient*: C/C++, Rust, Python, Javascript
+- *Experienced*: Lisp, Haskell, PHP, Java, Lua, Go, x86-Assembly, ARM-Assembly 
 
 ** Tools
-| Proficient  | : | GNU/Linux, POSIX Shells, TeX, Git, Nix/NixOS, GNU Make, ffmpeg, OpenSSH, vi/vim,         |
-|             |   | GNU Emacs, Docker, Nomad, Vault, nginx, ConcourseCI, NodeJS, ReactJS                     |
-| Experienced | : | Pandoc, GitHub Actions, ZFS, OCI, Terraform, Consul, Portage, yarn/npm, Rocket |
+- *Proficient*: GNU/Linux, POSIX Shells, TeX, Git, Nix/NixOS, GNU Make, ffmpeg, OpenSSH, vi/vim, GNU Emacs, Docker, Nomad, Vault, nginx, ConcourseCI, NodeJS, ReactJS                     
+- *Experienced*: Pandoc, GitHub Actions, ZFS, OCI, Terraform, Consul, Portage, yarn/npm, Rocket 
 
 ** Soft Skills
-| Languages | : | Hindi, Punjabi, English, Japanese (can read a little, cannot converse) |
-| Hobbies   | : | Home server/lab, Writing, Philosophy, Music theory, Geopolitics        |
-
+- *Languages*:  Hindi, Punjabi, English, Japanese (can read a little, cannot converse) 
+- *Hobbies*:  Home server/lab, Writing, Philosophy, Music theory, Geopolitics        
