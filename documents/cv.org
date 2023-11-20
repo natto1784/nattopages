@@ -3,12 +3,12 @@ title: Curriculum Vitae
 ---
 
 #+MACRO: SMALL \mdseries\smaller @@html:<small>@@  /$1/ @@html:</small>@@
-#+MACRO: RIGHT \hfill @@html:<span style="float:right">@@ /$1/  @@html:</span>@@
+#+MACRO: RIGHT \hfill @@html:<span style="float:right">@@ $1 @@html:</span>@@
 #+MACRO: TRULE \titlerule @@html:<hr />@@
 
 #+HTML: <h1>Curriculum Vitae</h1>Go <a href="/documents/cv.pdf">here</a> for the pdf.<hr>
 * Amneesh Singh
-
+
 {{{TRULE}}}
 | Email    | : | [[mailto:natto@weirdnatto.in][natto at weirdnatto dot in]] |
 | Homepage | : | [[https://weirdnatto.in][weirdnatto.in]]              |
@@ -17,29 +17,37 @@ Hello, I am Amneesh Singh, I also go by =natto1784= online. I live in Delhi, Ind
 
 * Work Experience
 {{{TRULE}}}
-** Cypherock - Software Engineer Intern {{{RIGHT(June 2023 -)}}}
-C, Sockets, Cryptography, Protocol buffers, Typescript, React
+** Cypherock - Software Engineer Intern {{{RIGHT(/June 2023 - September 2023/)}}}
+- Worked a bit on the firmware apps
+- Worked ocassionally on the Electron side of things
+- [[https://github.com/Cypherock/MPC-TSS][Implemented]] the sockets based PoC for the MPC based threshold signing scheme
+
+** TurboML - Software Engineer Intern {{{RIGHT(/November 2023 -/)}}}
+- Docker, Hashicorp Nomad
 
 * Student Programs, Scholarships, Examinations
 {{{TRULE}}}
 - *Google Summer of Code 2022* | {{{SMALL(C - GLib - Git)}}}
 I participated as a contributor in [[https://summerofcode.withgoogle.com/archive/2022][Google Summer of Code 2022]] at [[https://libvirt.org][libvirt]] and got paid a stipend for it by Google. The project involved adding the new introspectable statistics provided by QEMU and adding them under the libvirt statistics API.
-- NOC: Foundations of Cryptography, IIIT Bangalore, NPTEL {{{RIGHT(May 2022)}}}
-- NOC: Computer Architecture, IIT Delhi, NPTEL - {{{RIGHT(May 2022)}}}
+- NOC: Foundations of Cryptography, IIIT Bangalore, NPTEL {{{RIGHT(/May 2022/)}}}
+- NOC: Computer Architecture, IIT Delhi, NPTEL - {{{RIGHT(/May 2022/)}}}
 
 * Education
 {{{TRULE}}}
 ** B.Tech, Information Technology
-Maharaja Agrasen Institute of Technology {{{RIGHT((2021 - 2025)\, 8.6GPA)}}}
+Maharaja Agrasen Institute of Technology {{{RIGHT(/(2021 - 2025)\, 8.6GPA/)}}}
 
 * Projects
 {{{TRULE}}}
 ** Home Lab | {{{SMALL(linux - NixOS - WireGuard - OCI - Hashicorp)}}}
  I have an automated home VPN running multiple utility containers with most services reverse proxied via my VPS. Huge fan of [[https://en.wikipedia.org/wiki/Nix_(package_manager)][Nix]] package management.
-** tricc | {{{SMALL(Rust - Compiler Design)}}}
- A WIP toy compiler for my toy language.
-** matar (no public code) | {{{SMALL(C++ - Meson - ARM/THUMB architecture)}}}
- A very early stage WIP Nintendo Game Boy Advance emulator.
+** dotfiles | {{{SMALL(linux - NixOS - Configuration)}}} {{{RIGHT(https://github.com/natto1784/dotfiles)}}}
+ My personal dotfiles that have been NixOS exclusive since early 2021. These also includes configurations for
+some parts of my server infrastructure.
+** matar | {{{SMALL(ARM - Computer Architecture - C++ - Meson)}}} {{{RIGHT(https://github.com/natto1784/matar)}}}
+ A WIP Nintendo Game Boy Advance emulator.
+** tricc | {{{SMALL(Rust - Compiler Design)}}} {{{RIGHT(https://github.com/natto1784/tricc)}}}
+ A WIP (probably suspended) toy compiler for my toy language.
 
 * Skills
 {{{TRULE}}}
