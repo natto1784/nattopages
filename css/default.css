@@ -1,94 +1,94 @@
 @font-face {
-  font-family: 'Arvo';
+  font-family: "Arvo";
   font-style: normal;
-  src: url('../fonts/Arvo-Regular.woff2') format('woff2');
+  src: url("../fonts/Arvo-Regular.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: 'Arvo';
+  font-family: "Arvo";
   font-weight: bold;
-  src: url('../fonts/Arvo-Bold.woff2') format('woff2');
+  src: url("../fonts/Arvo-Bold.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: 'Arvo';
+  font-family: "Arvo";
   font-style: italic;
-  src: url('../fonts/Arvo-Italic.woff2') format('woff2');
+  src: url("../fonts/Arvo-Italic.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: 'Arvo';
-  font-weight: bold;
-  font-style: italic;
-  src: url('../fonts/Arvo-BoldItalic.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Lato';
-    font-style: normal;
-  src: url('../fonts/Lato-Regular.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Lato';
-  font-weight: bold;
-  src: url('../fonts/Lato-Bold.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Lato';
-  font-style: italic;
-  src: url('../fonts/Lato-Italic.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Lato';
+  font-family: "Arvo";
   font-weight: bold;
   font-style: italic;
-  src: url('../fonts/Lato-BoldItalic.woff2') format('woff2');
+  src: url("../fonts/Arvo-BoldItalic.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: 'Quantico';
+  font-family: "Lato";
   font-style: normal;
-  src: url('../fonts/Quantico-Regular.woff2') format('woff2');
+  src: url("../fonts/Lato-Regular.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: 'Quantico';
+  font-family: "Lato";
   font-weight: bold;
-  src: url('../fonts/Quantico-Bold.woff2') format('woff2');
+  src: url("../fonts/Lato-Bold.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: 'Quantico';
+  font-family: "Lato";
   font-style: italic;
-  src: url('../fonts/Quantico-Italic.woff2') format('woff2');
+  src: url("../fonts/Lato-Italic.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: 'Quantico';
+  font-family: "Lato";
   font-weight: bold;
   font-style: italic;
-  src: url('../fonts/Quantico-BoldItalic.woff2') format('woff2');
+  src: url("../fonts/Lato-BoldItalic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Quantico";
+  font-style: normal;
+  src: url("../fonts/Quantico-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Quantico";
+  font-weight: bold;
+  src: url("../fonts/Quantico-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Quantico";
+  font-style: italic;
+  src: url("../fonts/Quantico-Italic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Quantico";
+  font-weight: bold;
+  font-style: italic;
+  src: url("../fonts/Quantico-BoldItalic.woff2") format("woff2");
 }
 
 @font-family {
-  font-family: 'Monoid';
+  font-family: "Monoid";
   font-style: normal;
-  src: url('../fonts/Monoid-Regular.woff2') format('woff2');
+  src: url("../fonts/Monoid-Regular.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: 'Monoid';
+  font-family: "Monoid";
   font-weight: bold;
-  src: url('../fonts/Monoid-Bold.woff2') format('woff2');
+  src: url("../fonts/Monoid-Bold.woff2") format("woff2");
 }
 
 @font-family {
-  font-family: 'Monoid';
+  font-family: "Monoid";
   font-style: italic;
-  src: url('../fonts/Monoid-Italic.woff2') format('woff2');
+  src: url("../fonts/Monoid-Italic.woff2") format("woff2");
 }
 
 :root {
@@ -163,11 +163,18 @@ body {
   word-wrap: break-word;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   color: var(--overlay2);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Arvo", serif;
   font-weight: normal;
 }
@@ -177,18 +184,19 @@ header {
   margin: 4.2rem 0;
 }
 
-main a, footer a {
+main a,
+footer a {
   color: var(--sky);
 }
 
 main a:not(.footnote-ref):hover,
 main .footnote-ref *:hover,
-footer a:hover{
+footer a:hover {
   color: var(--base);
   background: var(--sky);
 }
 
-.subdomains li a:hover {
+#subdomains li a:hover {
   background: none !important;
 }
 
@@ -197,7 +205,8 @@ a {
   font-family: "Quantico", monospace;
 }
 
-a:hover, a *:hover {
+a:hover,
+a *:hover {
   transition-duration: 0.1s;
 }
 
@@ -249,12 +258,12 @@ article .post-header {
   color: var(--text);
 }
 
-.nattopages {
+#nattopages {
   text-align: center;
   margin: 1rem auto 3rem;
 }
 
-.nattopages a {
+#nattopages a {
   font-weight: bold;
   font-family: "Monoid";
   font-size: 3rem;
@@ -280,7 +289,7 @@ article > section {
 }
 
 pre {
-  font-family: 'Monoid', monospace;
+  font-family: "Monoid", monospace;
   padding: 2rem;
   border-radius: 1rem;
   border-left: 0.5rem solid var(--sapphire);
@@ -295,7 +304,8 @@ pre {
   width: max-content;
 }
 
-img, video {
+img,
+video {
   max-width: 100%;
 }
 
@@ -303,7 +313,7 @@ img, video {
   max-width: 100%;
   position: relative;
   height: 0;
-  padding-bottom: 56.25%
+  padding-bottom: 56.25%;
 }
 
 .iframe-parent iframe {
@@ -312,6 +322,14 @@ img, video {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+#sticker {
+  bottom: -2em;
+  left: -2em;
+  position: fixed;
+  z-index: 9999;
+  transform: rotate(45deg);
 }
 
 @media (max-width: 319px) {
@@ -324,16 +342,16 @@ img, video {
   footer {
     text-align: center;
   }
- 
+
   nav {
     flex-direction: column;
   }
- 
+
   nav a {
     display: block;
     line-height: 1.6;
   }
- 
+
   .toc {
     padding: 1rem;
   }
@@ -361,6 +379,10 @@ img, video {
 }
 
 @media (max-width: 639px) {
+  #sticker {
+    display: none;
+  }
+
   nav {
     flex-direction: column;
   }

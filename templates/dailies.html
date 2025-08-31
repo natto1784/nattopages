@@ -1,16 +1,13 @@
 You have stumbled upon a relic of the past that I never maintained.
-<hr>
+<hr />
 $for(today)$
-  <article>
-      <h1 class="post-title">$title$</h1>
-      <div class="post-teaser">
-            $body$
-      </div>
-      <hr>
-  </article>
+<article>
+  <h1 class="post-title">$title$</h1>
+  <div class="post-teaser">$body$</div>
+  <hr />
+</article>
 $endfor$
 
-<p>
- <h3> Previous Dailies: </h3>
-</p>
+<h3>Previous Dailies:</h3>
+
 $partial("templates/post-list.html")$

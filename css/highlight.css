@@ -1,30 +1,97 @@
-pre code { color: var(--subtext0); }
-code span.kw { color: var(--green); } /* Keyword */
-code span.dt { color: var(--yellow); } /* DataType */
-code span.dv { color: var(--sapphire); } /* DecVal */
-code span.bn { color: var(--sapphire); } /* BaseN */
-code span.fl { color: var(--sapphire); } /* Float */
-code span.ch { color: var(--sapphire); } /* Char */
-code span.st { color: var(--sapphire); } /* String */
-code span.co { color: var(--text); font-style: italic; } /* Comment */
-code span.ot { color: var(--sky); } /* Other */
-code span.al { color: var(--maroon); } /* Alert */
-code span.fu { color: var(--sky); } /* Function */
-code span.cn { color: var(--sapphire); } /* Constant */
-code span.sc { color: var(--maroon); } /* SpecialChar */
-code span.vs { color: var(--subtext0); } /* VerbatimString */
-code span.ss { color: var(--maroon); } /* SpecialString */
-code span.im { color: var(--subtext0); } /* Import */
-code span.va { color: var(--sky); } /* Variable */
-code span.cf { color: var(--green); } /* ControlFlow */
-code span.op { color: var(--green); } /* Operator */
-code span.bu { color: var(--subtext0); } /* BuiltIn */
-code span.ex { color: var(--subtext0); } /* Extension */
-code span.pp { color: var(--peach); } /* Preprocessor */
-code span.at { color: var(--subtext0); } /* Attribute */
-code span.er { color: var(--maroon); } /* Error */
-code span.wa { color: var(--peach); font-style: italic; } /* Warning */
-code span.do { color: var(--text); font-style: italic; } /* Documentation */
-code span.an { color: var(--text); font-style: italic; } /* Annotation */
-code span.cv { color: var(--text); font-style: italic; } /* CommentVar */
-code span.in { color: var(--text); font-weight:normal; font-style: normal; } /* Information */
+pre code {
+  color: var(--subtext0);
+}
+code span.kw {
+  color: var(--green);
+} /* Keyword */
+code span.dt {
+  color: var(--yellow);
+} /* DataType */
+code span.dv {
+  color: var(--sapphire);
+} /* DecVal */
+code span.bn {
+  color: var(--sapphire);
+} /* BaseN */
+code span.fl {
+  color: var(--sapphire);
+} /* Float */
+code span.ch {
+  color: var(--sapphire);
+} /* Char */
+code span.st {
+  color: var(--sapphire);
+} /* String */
+code span.co {
+  color: var(--text);
+  font-style: italic;
+} /* Comment */
+code span.ot {
+  color: var(--sky);
+} /* Other */
+code span.al {
+  color: var(--maroon);
+} /* Alert */
+code span.fu {
+  color: var(--sky);
+} /* Function */
+code span.cn {
+  color: var(--sapphire);
+} /* Constant */
+code span.sc {
+  color: var(--maroon);
+} /* SpecialChar */
+code span.vs {
+  color: var(--subtext0);
+} /* VerbatimString */
+code span.ss {
+  color: var(--maroon);
+} /* SpecialString */
+code span.im {
+  color: var(--subtext0);
+} /* Import */
+code span.va {
+  color: var(--sky);
+} /* Variable */
+code span.cf {
+  color: var(--green);
+} /* ControlFlow */
+code span.op {
+  color: var(--green);
+} /* Operator */
+code span.bu {
+  color: var(--subtext0);
+} /* BuiltIn */
+code span.ex {
+  color: var(--subtext0);
+} /* Extension */
+code span.pp {
+  color: var(--peach);
+} /* Preprocessor */
+code span.at {
+  color: var(--subtext0);
+} /* Attribute */
+code span.er {
+  color: var(--maroon);
+} /* Error */
+code span.wa {
+  color: var(--peach);
+  font-style: italic;
+} /* Warning */
+code span.do {
+  color: var(--text);
+  font-style: italic;
+} /* Documentation */
+code span.an {
+  color: var(--text);
+  font-style: italic;
+} /* Annotation */
+code span.cv {
+  color: var(--text);
+  font-style: italic;
+} /* CommentVar */
+code span.in {
+  color: var(--text);
+  font-weight: normal;
+  font-style: normal;
+} /* Information */
