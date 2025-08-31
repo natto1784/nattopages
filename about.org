@@ -3,7 +3,7 @@ title: About
 ---
 
 * Alo
-My name is Amneesh Singh but I also go as natto (or natto1784) online. I am 22 and from Delhi, currently I stay in Bengaluru. I am working as a Software Engineer right now, particularly with embedded devices. I struggle with basic tasks but I can barely help that.
+My name is Amneesh Singh but I also go as natto (or natto1784) online. I am 22 and from Delhi, and currently I stay in Bengaluru. I am working as a software engineer right now, particularly with embedded devices. I struggle with basic tasks but I can barely help that.
 
 I like a lot of things, but the thing I like the most is sleeping.
 

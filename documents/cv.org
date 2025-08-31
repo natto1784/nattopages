@@ -10,20 +10,36 @@ title: Curriculum Vitae
 * Amneesh Singh
 
 {{{TRULE}}}
-| Email    | : | [[mailto:natto@weirdnatto.in][natto at weirdnatto dot in]] |
-| Homepage | : | [[https://weirdnatto.in][weirdnatto.in]]              |
-
-Hello, I am Amneesh Singh, I also go by =natto1784= online. I live in Delhi, India; and do random stuff. I am more of a "system-administrator" type of guy, but when it comes to programming, I want to do it all low-level; unless it relates to my hobby.
+| Email    | : | [[mailto:amneeshsingh@proton.me][amneeshsingh at proton dot me]] - [[mailto:me@amneesh.com][me at amneesh dot com]] - [[mailto:natto@weirdnatto.in][natto at weirdnatto dot in]] |
+| Homepage | : | [[https://weirdnatto.in][weirdnatto.in]] - [[https://amneesh.com][amneesh.com]]                                                        |
+| GitHub   | : | [[https://github.com/natto1784/][natto1784]]                                                                          |
 
 * Work Experience
 {{{TRULE}}}
-** Cypherock - Software Engineer Intern {{{RIGHT(/June 2023 - September 2023/)}}}
-- Worked a bit on the firmware apps
-- Worked ocassionally on the Electron side of things
-- [[https://github.com/Cypherock/MPC-TSS][Implemented]] the sockets based PoC for the MPC based threshold signing scheme
+** Texas Instruments, Bengaluru
+*Embedded Software Engineer* {{{RIGHT(/Aug 2025 - Present/)}}}
+- Working with Sitara RTOS team
+- Working on SDHC driver for ZephyrOS
 
-** TurboML - Software Engineer Intern {{{RIGHT(/November 2023 -/)}}}
-- Docker, Hashicorp Nomad
+*Embedded Software Engineer Intern* {{{RIGHT(/Feb 2025 - July 2025/)}}}
+- Added AM64x/AM243x Cortex-R and Cortex-M support for ZephyrOS
+- Wrote ADC, SPI, EPWM, ECAP and NOR Flash device drivers for ZephyrOS
+
+*Embedded Software Engineer Intern* {{{RIGHT(/July 2024 - Sept 2024/)}}}
+- Tested various Xen features on K3 with Linux and ZephyrOS
+- Wrote Yocto recipes for enabling Xen on K3
+- Enabled Xen on baremetal and freertos binaries 
+- Wrote sample inter-VM communication programs using shared memory and event channels
+
+** Cypherock, Gurugram (Hybrid)
+*Software Engineer Intern* {{{RIGHT(/June 2023 - Sept 2023/)}}}
+- Worked on the firmware apps in C
+- Worked on the Electron side of things in Typescript
+- [[https://github.com/Cypherock/MPC-TSS/tree/main][Implemented]] the sockets based PoC for an MPC based threshold signing scheme
+
+** TurboML, Remote
+*Software Engineer Intern* {{{RIGHT(/November 2023/)}}}
+- Worked on the deployment side of things involving docker and nomad
 
 * Student Programs, Scholarships, Examinations
 {{{TRULE}}}
@@ -37,18 +53,6 @@ I participated as a contributor in [[https://summerofcode.withgoogle.com/archive
 ** B.Tech, Information Technology
 Maharaja Agrasen Institute of Technology {{{RIGHT(/(2021 - 2025)\, 8.6GPA/)}}}
 
-* Projects
-{{{TRULE}}}
-** Home Lab | {{{SMALL(linux - NixOS - WireGuard - OCI - Hashicorp)}}}
- I have an automated home VPN running multiple utility containers with most services reverse proxied via my VPS. Huge fan of [[https://en.wikipedia.org/wiki/Nix_(package_manager)][Nix]] package management.
-** dotfiles | {{{SMALL(linux - NixOS - Configuration)}}} {{{RIGHT(https://github.com/natto1784/dotfiles)}}}
- My personal dotfiles that have been NixOS exclusive since early 2021. These also includes configurations for
-some parts of my server infrastructure.
-** matar | {{{SMALL(ARM - Computer Architecture - C++ - Meson)}}} {{{RIGHT(https://github.com/natto1784/matar)}}}
- A WIP Nintendo Game Boy Advance emulator.
-** tricc | {{{SMALL(Rust - Compiler Design)}}} {{{RIGHT(https://github.com/natto1784/tricc)}}}
- A WIP (probably suspended) toy compiler for my toy language.
-
 * Skills
 {{{TRULE}}}
 ** Programming Languages
@@ -56,9 +60,10 @@ some parts of my server infrastructure.
 - *Experienced*: Lisp, Haskell, PHP, Java, Lua, Go, x86-Assembly, ARM-Assembly 
 
 ** Tools
-- *Proficient*: GNU/Linux, POSIX Shells, TeX, Git, Nix/NixOS, GNU Make, ffmpeg, OpenSSH, vi/vim, GNU Emacs, Docker, Nomad, Vault, nginx, ConcourseCI, NodeJS, ReactJS                     
-- *Experienced*: Pandoc, GitHub Actions, ZFS, OCI, Terraform, Consul, Portage, yarn/npm, Rocket 
+- *General*: GNU/Linux, Nix/NixOS, Xen, POSIX shells, TeX, Git, ffmpeg
+- *DevOps*: Docker, Nomad, Consul, Vault, Terraform, ConcourseCI, GitHub Actions, nginx, OCI
+- *Embedded*: ZephyrOS, Yocto, Baremetal, FreeRTOS, Device Driver Development
 
 ** Soft Skills
-- *Languages*:  Hindi, Punjabi, English, Japanese (can read a little, cannot converse) 
-- *Hobbies*:  Home server/lab, Writing, Philosophy, Music theory, Geopolitics        
+- *Languages*:  Hindi, Punjabi, English
+- *Hobbies*:  Home server/lab, Writing, Philosophy
