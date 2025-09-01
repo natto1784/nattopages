@@ -42,6 +42,7 @@
             buildInputs = with pkgs; [
               cabal-install
               haskellPackages.fourmolu
+              prettier
 
               (texlive.combine {
                 inherit (texlive)

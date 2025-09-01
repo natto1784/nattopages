@@ -336,6 +336,23 @@ video {
   align-items: center;
 }
 
+#sticker label:hover {
+  cursor: pointer;
+}
+
+#sticker-toggle {
+  display: none;
+}
+
+#sticker-toggle:checked ~ #sticker {
+  bottom: 1em;
+  left: 1em;
+}
+
+#sticker-toggle:checked ~ #sticker img {
+  display: none;
+}
+
 @media (max-width: 319px) {
   body {
     width: 90%;
