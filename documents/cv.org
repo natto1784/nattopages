@@ -17,28 +17,28 @@ title: Curriculum Vitae
 * Work Experience
 {{{TRULE}}}
 ** Texas Instruments, Bengaluru
-*Embedded Software Engineer* {{{RIGHT(/Aug 2025 - Present/)}}}
+/Embedded Software Engineer/ {{{RIGHT(/Aug 2025 - Present/)}}}
 - Working with Sitara RTOS team
 - Working on SDHC driver for ZephyrOS
 
-*Embedded Software Engineer Intern* {{{RIGHT(/Feb 2025 - July 2025/)}}}
+/Embedded Software Engineer Intern/ {{{RIGHT(/Feb 2025 - July 2025/)}}}
 - Added AM64x/AM243x Cortex-R and Cortex-M support for ZephyrOS
 - Wrote ADC, SPI, EPWM, ECAP and NOR Flash device drivers for ZephyrOS
 
-*Embedded Software Engineer Intern* {{{RIGHT(/July 2024 - Sept 2024/)}}}
+/Embedded Software Engineer Intern/ {{{RIGHT(/July 2024 - Sept 2024/)}}}
 - Tested various Xen features on K3 with Linux and ZephyrOS
 - Wrote Yocto recipes for enabling Xen on K3
 - Enabled Xen on baremetal and freertos binaries 
 - Wrote sample inter-VM communication programs using shared memory and event channels
 
 ** Cypherock, Gurugram (Hybrid)
-*Software Engineer Intern* {{{RIGHT(/June 2023 - Sept 2023/)}}}
+/Software Engineer Intern/ {{{RIGHT(/June 2023 - Sept 2023/)}}}
 - Worked on the firmware apps in C
 - Worked on the Electron side of things in Typescript
 - [[https://github.com/Cypherock/MPC-TSS/tree/main][Implemented]] the sockets based PoC for an MPC based threshold signing scheme
 
 ** TurboML, Remote
-*Software Engineer Intern* {{{RIGHT(/November 2023/)}}}
+/Software Engineer Intern/ {{{RIGHT(/November 2023/)}}}
 - Worked on the deployment side of things involving docker and nomad
 
 * Student Programs, Scholarships, Examinations
