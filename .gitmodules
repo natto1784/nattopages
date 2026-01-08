@@ -1,0 +1,6 @@
+[submodule "posts"]
+	path = posts
+	url = https://git.weirdnatto.in/natto1784/nattopages-posts.git
+[submodule "images"]
+	path = images
+	url = https://git.weirdnatto.in/natto1784/nattopages-images.git
