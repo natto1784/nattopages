@@ -42,6 +42,7 @@
             buildInputs = with pkgs; [
               cabal-install
               haskellPackages.fourmolu
+              vscode-langservers-extracted
               prettier
 
               (texlive.combine {
@@ -56,7 +57,6 @@
                   titlesec
                   ;
               })
-
               packages.default
             ];
             SSHTARGET = "bat@weirdnatto.in:/var/lib/site/";
