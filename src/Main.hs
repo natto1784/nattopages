@@ -41,6 +41,10 @@ main = hakyllWith config $ do
         route idRoute
         compile compressCssCompiler
 
+    match "scripts/**" $ do
+        route idRoute
+        compile copyFileCompiler
+
     match "*pdf" $ do
         route idRoute
 
