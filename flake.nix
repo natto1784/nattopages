@@ -2,76 +2,72 @@
   description = "My personal website";
 
   inputs = {
-    nixpkgs.follows = "hnix/nixpkgs";
-    hnix.url = "github:input-output-hk/haskell.nix";
-    utils.url = "github:numtide/flake-utils";
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    flake-parts.url = "github:hercules-ci/flake-parts";
+    haskell-flake.url = "github:srid/haskell-flake";
   };
 
   outputs =
-    {
+    inputs@{
       self,
       nixpkgs,
-      utils,
-      hnix,
+      flake-parts,
+      ...
     }:
-    utils.lib.eachDefaultSystem (
-      system:
-      let
-        overlays = [
-          hnix.overlay
-        ];
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      systems = nixpkgs.lib.systems.flakeExposed;
+      imports = [ inputs.haskell-flake.flakeModule ];
 
-        pkgs = import nixpkgs {
-          inherit system overlays;
-          inherit (hnix) config;
-        };
+      perSystem =
+        {
+          self',
+          pkgs,
+          config,
+          ...
+        }:
+        {
+          formatter = pkgs.nixfmt-tree;
 
-        nattopages = pkgs.haskell-nix.hix.project {
-          src = ./src;
-          compiler-nix-name = "ghc948";
-        };
+          haskellProjects.default = {
+            basePackages = pkgs.haskell.packages.ghc910;
+            autoWire = [ "packages" ];
+            devShell = {
+              enable = true;
+              hlsCheck.enable = true;
 
-        flake = nattopages.flake { };
-      in
-      flake
-      // rec {
-        packages.default = flake.packages."nattopages:exe:site";
-        devShells.default =
-          with pkgs;
-          mkShell {
-            buildInputs = with pkgs; [
-              cabal-install
-              haskellPackages.fourmolu
-              vscode-langservers-extracted
-              prettier
-
-              (texlive.combine {
-                inherit (texlive)
-                  scheme-small
-                  fontspec
-                  enumitem
-                  parskip
-                  hyperref
-                  standalone
-                  relsize
-                  titlesec
+              tools = hp: {
+                inherit (pkgs)
+                  nixpkgs-fmt
+                  vscode-langservers-extracted
                   ;
-              })
-              packages.default
-            ];
-            SSHTARGET = "bat@weirdnatto.in:/var/lib/site/";
-            SSHTARGETPORT = 22002;
-          };
-        formatter = pkgs.nixfmt-tree;
-      }
-    );
 
-  nixConfig = {
-    extra-substituters = [
-      "https://cache.iog.io"
-    ];
-    extra-trusted-public-keys = [
-      "hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ="
-    ];
-  };
+                inherit (hp)
+                  cabal-fmt
+                  fourmolu
+                  ;
+
+                texlive =
+                  with pkgs;
+                  texlive.combine {
+                    inherit (texlive)
+                      scheme-small
+                      fontspec
+                      enumitem
+                      parskip
+                      hyperref
+                      standalone
+                      relsize
+                      titlesec
+                      ;
+                  };
+              };
+            };
+          };
+          packages.default = self'.packages.nattopages;
+          devShells.default = pkgs.mkShell {
+            inputsFrom = [ config.haskellProjects.default.outputs.devShell ];
+            packages = [ self'.packages.default ];
+          };
+        };
+    };
 }

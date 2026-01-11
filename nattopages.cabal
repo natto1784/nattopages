@@ -5,11 +5,12 @@ license:            MIT
 cabal-version:      >= 1.10
 
 executable site
+  hs-source-dirs:   src
   main-is:          Main.hs
   build-depends:    base == 4.*
-                  , filepath == 1.4.*
+                  , filepath == 1.*
                   , hakyll == 4.16.*
-                  , pandoc == 3.1.6.2
+                  , pandoc == 3.*
                   , process == 1.6.*
                   , text == 2.*
   ghc-options:      -threaded -rtsopts -with-rtsopts=-N
