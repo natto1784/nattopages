@@ -40,7 +40,7 @@ function insert() {
 
     /* text */
     const text = document.createElement("p");
-    text.textContent = "You can also check this out if you want, it’s pretty cool:";
+    text.textContent = "You can also check this out if you want, it's pretty cool:";
 
     /* hint */
     const hint = document.createElement("span");

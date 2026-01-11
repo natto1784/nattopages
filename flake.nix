@@ -39,6 +39,7 @@
                 inherit (pkgs)
                   nixpkgs-fmt
                   vscode-langservers-extracted
+                  terser
                   ;
 
                 inherit (hp)
@@ -67,6 +68,8 @@
           devShells.default = pkgs.mkShell {
             inputsFrom = [ config.haskellProjects.default.outputs.devShell ];
             packages = [ self'.packages.default ];
+            SSHTARGET = "bat@weirdnatto.in:/var/lib/site/";
+            SSHTARGETPORT = 22002;
           };
         };
     };

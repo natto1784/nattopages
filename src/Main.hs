@@ -41,9 +41,9 @@ main = hakyllWith config $ do
         route idRoute
         compile compressCssCompiler
 
-    match "scripts/**" $ do
+    match "scripts/*js" $ do
         route idRoute
-        compile copyFileCompiler
+        compile $ getResourceBody >>= terser
 
     match "*pdf" $ do
         route idRoute
@@ -177,6 +177,32 @@ main = hakyllWith config $ do
             return ()
 
         makeItem $ TmpFile pdfPath
+
+    terser :: Item String -> Compiler (Item TmpFile)
+    terser item = do
+        TmpFile jsPath <- newTmpFile "script.js"
+        let tmpDir = takeDirectory jsPath
+            minJsPath = replaceExtension jsPath "min.js"
+
+        unsafeCompiler $ do
+            writeFile jsPath $ itemBody item
+            let x = itemBody item
+            _ <-
+                Process.system $
+                    unwords
+                        [ "terser"
+                        , jsPath
+                        , "-c"
+                        , "-m"
+                        , "toplevel"
+                        , "-o"
+                        , minJsPath
+                        , ">/dev/null"
+                        , "2>&1"
+                        ]
+            return ()
+
+        makeItem $ TmpFile minJsPath
 
 rssFeedConfiguration :: FeedConfiguration
 rssFeedConfiguration =
