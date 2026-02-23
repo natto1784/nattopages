@@ -51,27 +51,13 @@
                   nixpkgs-fmt
                   vscode-langservers-extracted
                   terser
+                  typst
                   ;
 
                 inherit (hp)
                   cabal-fmt
                   fourmolu
                   ;
-
-                texlive =
-                  with pkgs;
-                  texlive.combine {
-                    inherit (texlive)
-                      scheme-small
-                      fontspec
-                      enumitem
-                      parskip
-                      hyperref
-                      standalone
-                      relsize
-                      titlesec
-                      ;
-                  };
               };
             };
           };
@@ -81,6 +67,11 @@
             packages = [ self'.packages.default ];
             SSHTARGET = "bat@weirdnatto.in:/var/lib/site/";
             SSHTARGETPORT = 22002;
+            FONTCONFIG_FILE =
+              with pkgs;
+              makeFontsConf {
+                fontDirectories = [ libertine ];
+              };
           };
         };
     };

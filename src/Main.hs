@@ -56,16 +56,15 @@ main = hakyllWith config $ do
                 >>= relativizeUrls
 
     -- kindly stolen from https://github.com/jaspervdj/jaspervdj/blob/b2a9a34cd2195c6e216b922e152c42266dded99d/src/Main.hs#L163-L169
-    -- also see helper functions writeXetex and xelatex
     match "documents/cv.org" $
         version "pdf" $ do
             route $ setExtension "pdf"
             compile $
                 getResourceBody
                     >>= readPandoc
-                    >>= writeXeTex
-                    >>= loadAndApplyTemplate "templates/cv.tex" defaultCtx
-                    >>= xelatex
+                    >>= writeTypst
+                    >>= loadAndApplyTemplate "templates/cv.typ" defaultCtx
+                    >>= typst
 
     tags <- buildTags "posts/*" (fromCapture "archive/tags/*.html")
 
@@ -146,31 +145,30 @@ main = hakyllWith config $ do
     match "templates/*" $ compile templateBodyCompiler
   where
     -- https://github.com/jaspervdj/jaspervdj/blob/b2a9a34cd2195c6e216b922e152c42266dded99d/src/Main.hs#L214-L218
-    writeXeTex :: Item Pandoc.Pandoc -> Compiler (Item String)
-    writeXeTex = traverse $ \pandoc ->
-        case Pandoc.runPure (Pandoc.writeLaTeX Pandoc.def pandoc) of
+    writeTypst :: Item Pandoc.Pandoc -> Compiler (Item String)
+    writeTypst = traverse $ \pandoc ->
+        case Pandoc.runPure (Pandoc.writeTypst Pandoc.def pandoc) of
             Left err -> fail $ show err
             Right x -> return (T.unpack x)
 
     -- https://github.com/jaspervdj/jaspervdj/blob/b2a9a34cd2195c6e216b922e152c42266dded99d/src/Main.hs#L280-L292
     -- but even more hacky
-    xelatex :: Item String -> Compiler (Item TmpFile)
-    xelatex item = do
-        TmpFile texPath <- newTmpFile "xelatex.tex"
-        let tmpDir = takeDirectory texPath
-            pdfPath = replaceExtension texPath "pdf"
+    typst :: Item String -> Compiler (Item TmpFile)
+    typst item = do
+        TmpFile typPath <- newTmpFile "typst.typ"
+        let tmpDir = takeDirectory typPath
+            pdfPath = replaceExtension typPath "pdf"
 
         unsafeCompiler $ do
-            writeFile texPath $ itemBody item
+            writeFile typPath $ itemBody item
             let x = itemBody item
             _ <-
                 Process.system $
                     unwords
-                        [ "xelatex"
-                        , "-halt-on-error"
-                        , "-output-directory"
-                        , tmpDir
-                        , texPath
+                        [ "typst"
+                        , "compile"
+                        , typPath
+                        , pdfPath
                         , ">/dev/null"
                         , "2>&1"
                         ]

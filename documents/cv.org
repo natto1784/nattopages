@@ -2,68 +2,71 @@
 title: Curriculum Vitae
 ---
 
-#+MACRO: SMALL \mdseries\smaller @@html:<small>@@  /$1/ @@html:</small>@@
-#+MACRO: RIGHT \hfill @@html:<span style="float:right">@@ $1 @@html:</span>@@
-#+MACRO: TRULE \titlerule @@html:<hr />@@
+#+MACRO: SMALL @@typst:#text(size: 0.95em, weight: 400, style: "italic")[$1]@@ @@html:<small><i>$1</i></small>@@
+#+MACRO: RIGHT @@typst:#h(1fr) _ $1 _@@ @@html:<span style="float:right"><i>$1</i></span>@@
+#+MACRO: TRULE @@typst:#line(length: 100%, stroke: 0.5pt)@@ @@html:<hr />@@
 
 #+HTML: <h1>Curriculum Vitae</h1>Go <a href="/documents/cv.pdf">here</a> for the pdf.<hr>
 * Amneesh Singh
-
 {{{TRULE}}}
-| Email    | : | [[mailto:amneeshsingh@proton.me][amneeshsingh at proton dot me]] - [[mailto:me@amneesh.com][me at amneesh dot com]] - [[mailto:natto@weirdnatto.in][natto at weirdnatto dot in]] |
-| Homepage | : | [[https://weirdnatto.in][weirdnatto.in]] - [[https://amneesh.com][amneesh.com]]                                                        |
-| GitHub   | : | [[https://github.com/natto1784/][natto1784]]                                                                          |
+
+| Email    | : | [[mailto:amneeshsingh@proton.me][amneeshsingh at proton dot me]]  •  [[mailto:me@amneesh.com][me at amneesh dot com]]  •  [[mailto:natto@weirdnatto.in][natto at weirdnatto dot in]] |
+| Homepage | : | [[https://weirdnatto.in][weirdnatto.in]] • [[https://amneesh.com][amneesh.com]]                                                            |
+| GitHub   | : | [[https://github.com/natto1784/][natto1784]]                                                                              |
 
 * Work Experience
 {{{TRULE}}}
 ** Texas Instruments, Bengaluru
-/Embedded Software Engineer/ {{{RIGHT(/Aug 2025 - Present/)}}}
+*** Embedded Software Engineer {{{RIGHT(Aug 2025 - Present)}}}
 - Working with Sitara RTOS team
-- Working on SDHC driver for ZephyrOS
+- Working on SDHC and OSPI NOR flash driver for ZephyrOS
 
-/Embedded Software Engineer Intern/ {{{RIGHT(/Feb 2025 - July 2025/)}}}
+*** Embedded Software Engineer Intern {{{RIGHT(Feb 2025 - July 2025)}}}
 - Added AM64x/AM243x Cortex-R and Cortex-M support for ZephyrOS
 - Wrote ADC, SPI, EPWM, ECAP and NOR Flash device drivers for ZephyrOS
 
-/Embedded Software Engineer Intern/ {{{RIGHT(/July 2024 - Sept 2024/)}}}
+*** Embedded Software Engineer Intern {{{RIGHT(July 2024 - Sept 2024)}}}
 - Tested various Xen features on K3 with Linux and ZephyrOS
 - Wrote Yocto recipes for enabling Xen on K3
 - Enabled Xen on baremetal and freertos binaries 
 - Wrote sample inter-VM communication programs using shared memory and event channels
 
 ** Cypherock, Gurugram (Hybrid)
-/Software Engineer Intern/ {{{RIGHT(/June 2023 - Sept 2023/)}}}
+*** Software Engineer Intern {{{RIGHT(June 2023 - Sept 2023)}}}
 - Worked on the firmware apps in C
 - Worked on the Electron side of things in Typescript
 - [[https://github.com/Cypherock/MPC-TSS/tree/main][Implemented]] the sockets based PoC for an MPC based threshold signing scheme
 
 ** TurboML, Remote
-/Software Engineer Intern/ {{{RIGHT(/November 2023/)}}}
+*** Software Engineer Intern {{{RIGHT(November 2023)}}}
 - Worked on the deployment side of things involving docker and nomad
 
 * Student Programs, Scholarships, Examinations
 {{{TRULE}}}
 - *Google Summer of Code 2022* | {{{SMALL(C - GLib - Git)}}}
 I participated as a contributor in [[https://summerofcode.withgoogle.com/archive/2022][Google Summer of Code 2022]] at [[https://libvirt.org][libvirt]] and got paid a stipend for it by Google. The project involved adding the new introspectable statistics provided by QEMU and adding them under the libvirt statistics API.
-- NOC: Foundations of Cryptography, IIIT Bangalore, NPTEL {{{RIGHT(/May 2022/)}}}
-- NOC: Computer Architecture, IIT Delhi, NPTEL - {{{RIGHT(/May 2022/)}}}
+- NOC: Foundations of Cryptography, IIIT Bangalore, NPTEL {{{RIGHT(May 2022)}}}
+- NOC: Computer Architecture, IIT Delhi, NPTEL {{{RIGHT(May 2022)}}}
 
 * Education
 {{{TRULE}}}
 ** B.Tech, Information Technology
-Maharaja Agrasen Institute of Technology {{{RIGHT(/(2021 - 2025)\, 8.6GPA/)}}}
+Maharaja Agrasen Institute of Technology {{{RIGHT(2025\, 8.5GPA)}}}
 
 * Skills
 {{{TRULE}}}
-** Programming Languages
-- *Proficient*: C/C++, Rust, Python, Javascript
-- *Experienced*: Lisp, Haskell, PHP, Java, Lua, Go, x86-Assembly, ARM-Assembly 
-
 ** Tools
 - *General*: GNU/Linux, Nix/NixOS, Xen, POSIX shells, TeX, Git, ffmpeg
 - *DevOps*: Docker, Nomad, Consul, Vault, Terraform, ConcourseCI, GitHub Actions, nginx, OCI
 - *Embedded*: ZephyrOS, Yocto, Baremetal, FreeRTOS, Device Driver Development
 
 ** Soft Skills
-- *Languages*:  Hindi, Punjabi, English
+- *Languages*:  Hindi, Punjabi, English, Japanese
 - *Hobbies*:  Home server/lab, Writing, Philosophy
+
+* Projects
+{{{TRULE}}}
+*** Home Lab | {{{SMALL(linux - NixOS - WireGuard - OCI - Hashicorp)}}}
+ I have an automated home VPN running multiple utility containers with most services reverse proxied via my VPS. Huge fan of [[https://en.wikipedia.org/wiki/Nix_(package_manager)][Nix]] package management.
+*** matar | {{{SMALL(ARM - Computer Architecture - C++ - Meson)}}}
+ A WIP Nintendo Game Boy Advance emulator.
