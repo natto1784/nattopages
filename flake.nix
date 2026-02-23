@@ -23,12 +23,23 @@
           self',
           pkgs,
           config,
+          lib,
           ...
         }:
         {
           formatter = pkgs.nixfmt-tree;
 
           haskellProjects.default = {
+            projectRoot = builtins.toString (
+              lib.fileset.toSource {
+                root = ./.;
+                fileset = lib.fileset.unions [
+                  ./src
+                  ./nattopages.cabal
+                ];
+              }
+            );
+
             basePackages = pkgs.haskell.packages.ghc910;
             autoWire = [ "packages" ];
             devShell = {
