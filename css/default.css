@@ -1,18 +1,21 @@
 @font-face {
   font-family: "Arvo";
   font-style: normal;
+  font-display: swap;
   src: url("../fonts/Arvo-Regular.woff2") format("woff2");
 }
 
 @font-face {
   font-family: "Arvo";
   font-weight: bold;
+  font-display: swap;
   src: url("../fonts/Arvo-Bold.woff2") format("woff2");
 }
 
 @font-face {
   font-family: "Arvo";
   font-style: italic;
+  font-display: swap;
   src: url("../fonts/Arvo-Italic.woff2") format("woff2");
 }
 
@@ -20,24 +23,28 @@
   font-family: "Arvo";
   font-weight: bold;
   font-style: italic;
+  font-display: swap;
   src: url("../fonts/Arvo-BoldItalic.woff2") format("woff2");
 }
 
 @font-face {
   font-family: "Lato";
   font-style: normal;
+  font-display: swap;
   src: url("../fonts/Lato-Regular.woff2") format("woff2");
 }
 
 @font-face {
   font-family: "Lato";
   font-weight: bold;
+  font-display: swap;
   src: url("../fonts/Lato-Bold.woff2") format("woff2");
 }
 
 @font-face {
   font-family: "Lato";
   font-style: italic;
+  font-display: swap;
   src: url("../fonts/Lato-Italic.woff2") format("woff2");
 }
 
@@ -45,24 +52,28 @@
   font-family: "Lato";
   font-weight: bold;
   font-style: italic;
+  font-display: swap;
   src: url("../fonts/Lato-BoldItalic.woff2") format("woff2");
 }
 
 @font-face {
   font-family: "Quantico";
   font-style: normal;
+  font-display: swap;
   src: url("../fonts/Quantico-Regular.woff2") format("woff2");
 }
 
 @font-face {
   font-family: "Quantico";
   font-weight: bold;
+  font-display: swap;
   src: url("../fonts/Quantico-Bold.woff2") format("woff2");
 }
 
 @font-face {
   font-family: "Quantico";
   font-style: italic;
+  font-display: swap;
   src: url("../fonts/Quantico-Italic.woff2") format("woff2");
 }
 
@@ -70,24 +81,28 @@
   font-family: "Quantico";
   font-weight: bold;
   font-style: italic;
+  font-display: swap;
   src: url("../fonts/Quantico-BoldItalic.woff2") format("woff2");
 }
 
-@font-family {
+@font-face {
   font-family: "Monoid";
   font-style: normal;
+  font-display: swap;
   src: url("../fonts/Monoid-Regular.woff2") format("woff2");
 }
 
 @font-face {
   font-family: "Monoid";
   font-weight: bold;
+  font-display: swap;
   src: url("../fonts/Monoid-Bold.woff2") format("woff2");
 }
 
-@font-family {
+@font-face {
   font-family: "Monoid";
   font-style: italic;
+  font-display: swap;
   src: url("../fonts/Monoid-Italic.woff2") format("woff2");
 }
 
