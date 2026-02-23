@@ -25,6 +25,22 @@ const videos = [
 
 const intro = document.getElementById("intro");
 
+function init() {
+    if (!intro) return;
+
+    /* text */
+    const text = document.createElement("p");
+    text.textContent = "click on me for some cool stuff";
+    text.style.cursor = "pointer";
+    text.style.color = "var(--yellow)";
+    text.addEventListener("click", () => {
+        insert();
+        text.remove();
+    });
+
+    intro.insertAdjacentElement("afterend", text);
+}
+
 function insert() {
     if (!intro) return;
 
@@ -37,21 +53,19 @@ function insert() {
     iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
     iframe.referrerPolicy = "strict-origin-when-cross-origin";
     iframe.allowFullscreen = true;
-
-    /* text */
-    const text = document.createElement("p");
-    text.textContent = "You can also check this out if you want, it's pretty cool:";
+    iframe.style.width = "100%";
 
     /* hint */
     const hint = document.createElement("span");
-    hint.textContent = "hint: refresh for more random videos";
+    hint.textContent = "hint: click here for another video";
     hint.className = "video-hint";
     hint.style.fontSize = "smaller";
     hint.style.opacity = "0.7";
     hint.style.cursor = "pointer";
-    hint.addEventListener("click", () => location.reload());
-    text.appendChild(document.createElement("br"));
-    text.appendChild(hint);
+    hint.addEventListener("click", () => {
+        const video = videos[Math.floor(Math.random() * videos.length)];
+        iframe.src = "https://www.youtube.com/embed/" + video;
+    });
 
     /* iframe parent */
     const iframeParent = document.createElement("div");
@@ -60,7 +74,7 @@ function insert() {
 
     /* insert after intro */
     intro.insertAdjacentElement("afterend", iframeParent);
-    intro.insertAdjacentElement("afterend", text);
+    intro.insertAdjacentElement("afterend", hint);
 }
 
-insert();
+init();
