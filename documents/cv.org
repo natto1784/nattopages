@@ -61,7 +61,7 @@ Maharaja Agrasen Institute of Technology {{{RIGHT(2025\, 8.5GPA)}}}
 - *Embedded*: ZephyrOS, Yocto, Baremetal, FreeRTOS, Device Driver Development
 
 ** Soft Skills
-- *Languages*:  Hindi, Punjabi, English, Japanese
+- *Languages*:  Hindi, Punjabi, English
 - *Hobbies*:  Home server/lab, Writing, Philosophy
 
 * Projects
