@@ -248,7 +248,7 @@ defaultCtx =
     domainCtx :: Context String
     domainCtx = constField "domain" domain
     subdomains :: [Item String]
-    subdomains = map mkItem ["git", "radio", "f"]
+    subdomains = map mkItem ["git", "radio", "f", "map"]
       where
         mkItem :: a -> Item a
         mkItem a = Item{itemIdentifier = "subdomain", itemBody = a}
